@@ -1,0 +1,2720 @@
+{
+    "friend_pending_reward_email_entry": {
+        "ADVOCATE": [],
+        "FRIEND": [
+            {
+                "id": "7189670405549212297",
+                "enabled": true,
+                "triggers": [
+                    {
+                        "trigger_id": "7189670407326381197",
+                        "trigger_phase": "MATCHING",
+                        "trigger_name": "EVENT",
+                        "trigger_description": null,
+                        "enabled": true,
+                        "negated": false,
+                        "event_names": [
+                            "converted"
+                        ],
+                        "event_type": "STEP",
+                        "component_ids": [
+                            "7189670408365040373"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "7189670408365040373",
+                                "socket_names": []
+                            }
+                        ],
+                        "trigger_type": "EVENT"
+                    },
+                    {
+                        "trigger_id": "7189670406167036953",
+                        "trigger_phase": "QUALIFYING",
+                        "trigger_name": "Event quality",
+                        "trigger_description": null,
+                        "enabled": true,
+                        "negated": false,
+                        "data": {},
+                        "expression": "spel@runtime:'HIGH' == context.causeEvent?.selectedCampaignContext?.quality",
+                        "component_ids": [
+                            "7189670408365040373"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "7189670408365040373",
+                                "socket_names": []
+                            }
+                        ],
+                        "trigger_type": "EXPRESSION"
+                    },
+                    {
+                        "trigger_id": "7189670405196435163",
+                        "trigger_phase": "MATCHING",
+                        "trigger_name": "ZONE_STATE",
+                        "trigger_description": null,
+                        "enabled": true,
+                        "negated": false,
+                        "zone_name": "friend_pending_reward_email",
+                        "step_name": null,
+                        "invert_mapping_state": false,
+                        "component_ids": [
+                            "7189670408365040373"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "7189670408365040373",
+                                "socket_names": []
+                            }
+                        ],
+                        "trigger_type": "ZONE_STATE"
+                    }
+                ],
+                "component_ids": [
+                    "7189670408365040373"
+                ],
+                "component_references": [
+                    {
+                        "component_id": "7189670408365040373",
+                        "socket_names": []
+                    }
+                ],
+                "created_date": "2023-01-17T09:13:08.931-08:00",
+                "updated_date": "2024-09-10T01:45:21.954-07:00",
+                "name": "friend_pending_reward_email_entry",
+                "scope": "PUBLIC",
+                "enabled_on_states": [
+                    "LIVE",
+                    "PAUSED"
+                ],
+                "selectors": [
+                    "MATCHING_CAMPAIGN"
+                ],
+                "actions": [
+                    {
+                        "action_id": "7189670406273590738",
+                        "quality": "HIGH",
+                        "zone_name": "friend_pending_reward_email",
+                        "data": {
+                            "labels": "spel@runtime:context.stepEvent.selectedCampaignContext.programLabel"
+                        },
+                        "enabled": true,
+                        "component_ids": [
+                            "7189670408365040373"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "7189670408365040373",
+                                "socket_names": []
+                            }
+                        ],
+                        "action_type": "EMAIL"
+                    }
+                ],
+                "aliases": [],
+                "data": [],
+                "journey_names": [
+                    "FRIEND"
+                ],
+                "send_policy": "ALL",
+                "type": "CONTROLLER",
+                "controller_id": "7189670405549212297",
+                "isFirstOrder": false,
+                "children": []
+            }
+        ],
+        "MARKETING": []
+    },
+    "advocate_pending_reward_email_entry": {
+        "ADVOCATE": [],
+        "FRIEND": [
+            {
+                "id": "7189670408330432933",
+                "enabled": true,
+                "triggers": [
+                    {
+                        "trigger_id": "7189670408297079413",
+                        "trigger_phase": "MATCHING",
+                        "trigger_name": "EVENT",
+                        "trigger_description": null,
+                        "enabled": true,
+                        "negated": false,
+                        "event_names": [
+                            "converted"
+                        ],
+                        "event_type": "STEP",
+                        "component_ids": [
+                            "7189670406432427572"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "7189670406432427572",
+                                "socket_names": []
+                            }
+                        ],
+                        "trigger_type": "EVENT"
+                    },
+                    {
+                        "trigger_id": "7189670407953086703",
+                        "trigger_phase": "QUALIFYING",
+                        "trigger_name": "Event quality",
+                        "trigger_description": null,
+                        "enabled": true,
+                        "negated": false,
+                        "data": {},
+                        "expression": "spel@runtime:'HIGH' == context.causeEvent?.selectedCampaignContext?.quality",
+                        "component_ids": [
+                            "7189670406432427572"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "7189670406432427572",
+                                "socket_names": []
+                            }
+                        ],
+                        "trigger_type": "EXPRESSION"
+                    }
+                ],
+                "component_ids": [
+                    "7189670406432427572"
+                ],
+                "component_references": [
+                    {
+                        "component_id": "7189670406432427572",
+                        "socket_names": []
+                    }
+                ],
+                "created_date": "2023-01-17T09:13:08.932-08:00",
+                "updated_date": "2024-09-10T01:45:21.954-07:00",
+                "name": "advocate_pending_reward_email_entry",
+                "scope": "PUBLIC",
+                "enabled_on_states": [
+                    "LIVE"
+                ],
+                "selectors": [
+                    "MATCHING_CAMPAIGN"
+                ],
+                "actions": [
+                    {
+                        "action_id": "7189670408894379607",
+                        "quality": "HIGH",
+                        "event_name": "advocate_pending_reward_email_advocate_entry",
+                        "as_person_identification": {
+                            "value": "{{ stepEvent.getReferralContext().isPresent() ? stepEvent.getReferralContext().get().getOtherPersonId().getValue() : null }}",
+                            "person_identification_type": "PERSON_ID"
+                        },
+                        "as_person_journey": null,
+                        "data": {},
+                        "labels": [],
+                        "enabled": true,
+                        "component_ids": [
+                            "7189670406432427572"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "7189670406432427572",
+                                "socket_names": []
+                            }
+                        ],
+                        "action_type": "FIRE_AS_PERSON"
+                    }
+                ],
+                "aliases": [],
+                "data": [],
+                "journey_names": [
+                    "FRIEND"
+                ],
+                "send_policy": "ALL",
+                "type": "CONTROLLER",
+                "controller_id": "7189670408330432933",
+                "isFirstOrder": false,
+                "children": [
+                    "advocate_pending_reward_email_advocate_entry"
+                ]
+            }
+        ],
+        "MARKETING": []
+    },
+    "promotion_viewed": {
+        "ADVOCATE": [
+            {
+                "id": "7189670404935859715",
+                "enabled": true,
+                "triggers": [
+                    {
+                        "trigger_id": "7189670407133456335",
+                        "trigger_phase": "MATCHING",
+                        "trigger_name": "EVENT",
+                        "trigger_description": null,
+                        "enabled": true,
+                        "negated": false,
+                        "event_names": [
+                            "mail_after_purchase_only_referred.email_opened"
+                        ],
+                        "event_type": "MESSAGE",
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ],
+                        "trigger_type": "EVENT"
+                    }
+                ],
+                "component_ids": [
+                    "4193408865040769817"
+                ],
+                "component_references": [
+                    {
+                        "component_id": "4193408865040769817",
+                        "socket_names": []
+                    }
+                ],
+                "created_date": "2023-01-17T09:13:08.936-08:00",
+                "updated_date": "2024-09-10T01:45:21.954-07:00",
+                "name": "mail_after_purchase_only_referred_opened",
+                "scope": "PUBLIC",
+                "enabled_on_states": [
+                    "LIVE",
+                    "PAUSED",
+                    "ENDED"
+                ],
+                "selectors": [
+                    "MATCHING_CAMPAIGN"
+                ],
+                "actions": [],
+                "aliases": [
+                    "promotion_viewed",
+                    "promotion_email_opened",
+                    "promotion_experienced"
+                ],
+                "data": [
+                    {
+                        "name": "message_id",
+                        "value": "spel@runtime:context.causeEvent.messageId",
+                        "scope": "PUBLIC",
+                        "dimension": false,
+                        "persist_types": [],
+                        "default_value": null,
+                        "key_type": "NONE",
+                        "enabled": true,
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ]
+                    }
+                ],
+                "journey_names": [
+                    "ADVOCATE"
+                ],
+                "send_policy": "ALL",
+                "type": "CONTROLLER",
+                "controller_id": "7189670404935859715",
+                "isFirstOrder": false,
+                "children": []
+            },
+            {
+                "id": "7189670405515061180",
+                "enabled": true,
+                "triggers": [
+                    {
+                        "trigger_id": "7189670409042180493",
+                        "trigger_phase": "MATCHING",
+                        "trigger_name": "EVENT",
+                        "trigger_description": null,
+                        "enabled": true,
+                        "negated": false,
+                        "event_names": [
+                            "advocate_welcome_email.email_opened"
+                        ],
+                        "event_type": "MESSAGE",
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ],
+                        "trigger_type": "EVENT"
+                    }
+                ],
+                "component_ids": [
+                    "4193408865040769817"
+                ],
+                "component_references": [
+                    {
+                        "component_id": "4193408865040769817",
+                        "socket_names": []
+                    }
+                ],
+                "created_date": "2023-01-17T09:13:08.931-08:00",
+                "updated_date": "2024-09-10T01:45:21.954-07:00",
+                "name": "advocate_welcome_email_opened",
+                "scope": "PUBLIC",
+                "enabled_on_states": [
+                    "LIVE",
+                    "PAUSED",
+                    "ENDED"
+                ],
+                "selectors": [
+                    "MATCHING_CAMPAIGN"
+                ],
+                "actions": [],
+                "aliases": [
+                    "promotion_viewed",
+                    "promotion_email_opened",
+                    "promotion_experienced"
+                ],
+                "data": [
+                    {
+                        "name": "message_id",
+                        "value": "spel@runtime:context.causeEvent.messageId",
+                        "scope": "PUBLIC",
+                        "dimension": false,
+                        "persist_types": [],
+                        "default_value": null,
+                        "key_type": "NONE",
+                        "enabled": true,
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ]
+                    }
+                ],
+                "journey_names": [
+                    "ADVOCATE"
+                ],
+                "send_policy": "ALL",
+                "type": "CONTROLLER",
+                "controller_id": "7189670405515061180",
+                "isFirstOrder": false,
+                "children": []
+            },
+            {
+                "id": "7189670406146199255",
+                "enabled": true,
+                "triggers": [
+                    {
+                        "trigger_id": "7189670407189937327",
+                        "trigger_phase": "MATCHING",
+                        "trigger_name": "EVENT",
+                        "trigger_description": null,
+                        "enabled": true,
+                        "negated": false,
+                        "event_names": [
+                            "advocate_earned_reward_email.email_opened"
+                        ],
+                        "event_type": "MESSAGE",
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ],
+                        "trigger_type": "EVENT"
+                    }
+                ],
+                "component_ids": [
+                    "4193408865040769817"
+                ],
+                "component_references": [
+                    {
+                        "component_id": "4193408865040769817",
+                        "socket_names": []
+                    }
+                ],
+                "created_date": "2023-01-17T09:13:08.931-08:00",
+                "updated_date": "2024-09-10T01:45:21.954-07:00",
+                "name": "advocate_reward_email_opened",
+                "scope": "PUBLIC",
+                "enabled_on_states": [
+                    "LIVE",
+                    "PAUSED",
+                    "ENDED"
+                ],
+                "selectors": [
+                    "MATCHING_CAMPAIGN"
+                ],
+                "actions": [],
+                "aliases": [
+                    "promotion_viewed",
+                    "promotion_email_opened",
+                    "promotion_experienced"
+                ],
+                "data": [
+                    {
+                        "name": "message_id",
+                        "value": "spel@runtime:context.causeEvent.messageId",
+                        "scope": "PUBLIC",
+                        "dimension": false,
+                        "persist_types": [],
+                        "default_value": null,
+                        "key_type": "NONE",
+                        "enabled": true,
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ]
+                    }
+                ],
+                "journey_names": [
+                    "ADVOCATE"
+                ],
+                "send_policy": "ALL",
+                "type": "CONTROLLER",
+                "controller_id": "7189670406146199255",
+                "isFirstOrder": false,
+                "children": []
+            },
+            {
+                "id": "7189670407027087248",
+                "enabled": true,
+                "triggers": [
+                    {
+                        "trigger_id": "7189670404983452666",
+                        "trigger_phase": "MATCHING",
+                        "trigger_name": "EVENT",
+                        "trigger_description": null,
+                        "enabled": true,
+                        "negated": false,
+                        "event_names": [
+                            "advocate_stats_email.email_opened"
+                        ],
+                        "event_type": "MESSAGE",
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ],
+                        "trigger_type": "EVENT"
+                    }
+                ],
+                "component_ids": [
+                    "4193408865040769817"
+                ],
+                "component_references": [
+                    {
+                        "component_id": "4193408865040769817",
+                        "socket_names": []
+                    }
+                ],
+                "created_date": "2023-01-17T09:13:08.933-08:00",
+                "updated_date": "2024-09-10T01:45:21.954-07:00",
+                "name": "advocate_stats_email_opened",
+                "scope": "PUBLIC",
+                "enabled_on_states": [
+                    "LIVE",
+                    "PAUSED",
+                    "ENDED"
+                ],
+                "selectors": [
+                    "MATCHING_CAMPAIGN"
+                ],
+                "actions": [],
+                "aliases": [
+                    "promotion_viewed",
+                    "promotion_email_opened",
+                    "promotion_experienced"
+                ],
+                "data": [
+                    {
+                        "name": "message_id",
+                        "value": "spel@runtime:context.causeEvent.messageId",
+                        "scope": "PUBLIC",
+                        "dimension": false,
+                        "persist_types": [],
+                        "default_value": null,
+                        "key_type": "NONE",
+                        "enabled": true,
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ]
+                    }
+                ],
+                "journey_names": [
+                    "ADVOCATE"
+                ],
+                "send_policy": "ALL",
+                "type": "CONTROLLER",
+                "controller_id": "7189670407027087248",
+                "isFirstOrder": false,
+                "children": []
+            },
+            {
+                "id": "7189670408262866223",
+                "enabled": true,
+                "triggers": [
+                    {
+                        "trigger_id": "7189670407943268147",
+                        "trigger_phase": "MATCHING",
+                        "trigger_name": "EVENT",
+                        "trigger_description": null,
+                        "enabled": true,
+                        "negated": false,
+                        "event_names": [
+                            "mail_after_purchase_email.email_opened"
+                        ],
+                        "event_type": "MESSAGE",
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ],
+                        "trigger_type": "EVENT"
+                    }
+                ],
+                "component_ids": [
+                    "4193408865040769817"
+                ],
+                "component_references": [
+                    {
+                        "component_id": "4193408865040769817",
+                        "socket_names": []
+                    }
+                ],
+                "created_date": "2023-01-17T09:13:08.931-08:00",
+                "updated_date": "2024-09-10T01:45:21.954-07:00",
+                "name": "mail_after_purchase_email_opened",
+                "scope": "PUBLIC",
+                "enabled_on_states": [
+                    "LIVE",
+                    "PAUSED",
+                    "ENDED"
+                ],
+                "selectors": [
+                    "MATCHING_CAMPAIGN"
+                ],
+                "actions": [],
+                "aliases": [
+                    "promotion_viewed",
+                    "promotion_email_opened",
+                    "promotion_experienced"
+                ],
+                "data": [
+                    {
+                        "name": "message_id",
+                        "value": "spel@runtime:context.causeEvent.messageId",
+                        "scope": "PUBLIC",
+                        "dimension": false,
+                        "persist_types": [],
+                        "default_value": null,
+                        "key_type": "NONE",
+                        "enabled": true,
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ]
+                    }
+                ],
+                "journey_names": [
+                    "ADVOCATE"
+                ],
+                "send_policy": "ALL",
+                "type": "CONTROLLER",
+                "controller_id": "7189670408262866223",
+                "isFirstOrder": false,
+                "children": []
+            }
+        ],
+        "FRIEND": [
+            {
+                "id": "7189670406138150105",
+                "enabled": true,
+                "triggers": [
+                    {
+                        "trigger_id": "7189670406441961512",
+                        "trigger_phase": "MATCHING",
+                        "trigger_name": "EVENT",
+                        "trigger_description": null,
+                        "enabled": true,
+                        "negated": false,
+                        "event_names": [
+                            "friend_earned_reward_email.email_opened"
+                        ],
+                        "event_type": "MESSAGE",
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ],
+                        "trigger_type": "EVENT"
+                    }
+                ],
+                "component_ids": [
+                    "4193408865040769817"
+                ],
+                "component_references": [
+                    {
+                        "component_id": "4193408865040769817",
+                        "socket_names": []
+                    }
+                ],
+                "created_date": "2023-01-17T09:13:08.931-08:00",
+                "updated_date": "2024-09-10T01:45:21.954-07:00",
+                "name": "friend_reward_email_opened",
+                "scope": "PUBLIC",
+                "enabled_on_states": [
+                    "LIVE",
+                    "PAUSED",
+                    "ENDED"
+                ],
+                "selectors": [
+                    "MATCHING_CAMPAIGN"
+                ],
+                "actions": [],
+                "aliases": [
+                    "promotion_viewed",
+                    "promotion_email_opened",
+                    "promotion_experienced"
+                ],
+                "data": [
+                    {
+                        "name": "message_id",
+                        "value": "spel@runtime:context.causeEvent.messageId",
+                        "scope": "PUBLIC",
+                        "dimension": false,
+                        "persist_types": [],
+                        "default_value": null,
+                        "key_type": "NONE",
+                        "enabled": true,
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ]
+                    }
+                ],
+                "journey_names": [
+                    "FRIEND"
+                ],
+                "send_policy": "ALL",
+                "type": "CONTROLLER",
+                "controller_id": "7189670406138150105",
+                "isFirstOrder": false,
+                "children": []
+            }
+        ],
+        "MARKETING": []
+    },
+    "friend_pending_reward_email_triggered": {
+        "ADVOCATE": [],
+        "FRIEND": [
+            {
+                "id": "7189670405599279035",
+                "enabled": true,
+                "triggers": [
+                    {
+                        "trigger_id": "7189670409026478862",
+                        "trigger_phase": "MATCHING",
+                        "trigger_name": "EVENT",
+                        "trigger_description": null,
+                        "enabled": true,
+                        "negated": false,
+                        "event_names": [
+                            "friend_pending_reward_email.email_triggered"
+                        ],
+                        "event_type": "MESSAGE",
+                        "component_ids": [
+                            "7189670408365040373"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "7189670408365040373",
+                                "socket_names": []
+                            }
+                        ],
+                        "trigger_type": "EVENT"
+                    }
+                ],
+                "component_ids": [
+                    "7189670408365040373"
+                ],
+                "component_references": [
+                    {
+                        "component_id": "7189670408365040373",
+                        "socket_names": []
+                    }
+                ],
+                "created_date": "2023-01-17T09:13:08.932-08:00",
+                "updated_date": "2024-09-10T01:45:21.954-07:00",
+                "name": "friend_pending_reward_email_triggered",
+                "scope": "PUBLIC",
+                "enabled_on_states": [
+                    "LIVE",
+                    "PAUSED",
+                    "ENDED"
+                ],
+                "selectors": [
+                    "MATCHING_CAMPAIGN"
+                ],
+                "actions": [],
+                "aliases": [],
+                "data": [
+                    {
+                        "name": "message_id",
+                        "value": "spel@runtime:context.causeEvent.messageId",
+                        "scope": "PUBLIC",
+                        "dimension": false,
+                        "persist_types": [],
+                        "default_value": null,
+                        "key_type": "NONE",
+                        "enabled": true,
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ]
+                    }
+                ],
+                "journey_names": [
+                    "FRIEND"
+                ],
+                "send_policy": "ALL",
+                "type": "CONTROLLER",
+                "controller_id": "7189670405599279035",
+                "isFirstOrder": false,
+                "children": []
+            }
+        ],
+        "MARKETING": []
+    },
+    "advocate_pending_reward_email_triggered": {
+        "ADVOCATE": [
+            {
+                "id": "7189670405697639647",
+                "enabled": true,
+                "triggers": [
+                    {
+                        "trigger_id": "7189670405274162486",
+                        "trigger_phase": "MATCHING",
+                        "trigger_name": "EVENT",
+                        "trigger_description": null,
+                        "enabled": true,
+                        "negated": false,
+                        "event_names": [
+                            "advocate_pending_reward_email.email_triggered"
+                        ],
+                        "event_type": "MESSAGE",
+                        "component_ids": [
+                            "7189670406432427572"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "7189670406432427572",
+                                "socket_names": []
+                            }
+                        ],
+                        "trigger_type": "EVENT"
+                    }
+                ],
+                "component_ids": [
+                    "7189670406432427572"
+                ],
+                "component_references": [
+                    {
+                        "component_id": "7189670406432427572",
+                        "socket_names": []
+                    }
+                ],
+                "created_date": "2023-01-17T09:13:08.932-08:00",
+                "updated_date": "2024-09-10T01:45:21.954-07:00",
+                "name": "advocate_pending_reward_email_triggered",
+                "scope": "PUBLIC",
+                "enabled_on_states": [
+                    "LIVE",
+                    "PAUSED",
+                    "ENDED"
+                ],
+                "selectors": [
+                    "MATCHING_CAMPAIGN"
+                ],
+                "actions": [],
+                "aliases": [],
+                "data": [
+                    {
+                        "name": "message_id",
+                        "value": "spel@runtime:context.causeEvent.messageId",
+                        "scope": "PUBLIC",
+                        "dimension": false,
+                        "persist_types": [],
+                        "default_value": null,
+                        "key_type": "NONE",
+                        "enabled": true,
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ]
+                    }
+                ],
+                "journey_names": [
+                    "ADVOCATE"
+                ],
+                "send_policy": "ALL",
+                "type": "CONTROLLER",
+                "controller_id": "7189670405697639647",
+                "isFirstOrder": false,
+                "children": []
+            }
+        ],
+        "FRIEND": [],
+        "MARKETING": []
+    },
+    "share_experienced": {
+        "ADVOCATE": [],
+        "FRIEND": [],
+        "MARKETING": []
+    },
+    "friend_pending_reward_email_delivered": {
+        "ADVOCATE": [],
+        "FRIEND": [
+            {
+                "id": "7189670407151677533",
+                "enabled": true,
+                "triggers": [
+                    {
+                        "trigger_id": "7189670407066376687",
+                        "trigger_phase": "MATCHING",
+                        "trigger_name": "EVENT",
+                        "trigger_description": null,
+                        "enabled": true,
+                        "negated": false,
+                        "event_names": [
+                            "friend_pending_reward_email.email_delivered"
+                        ],
+                        "event_type": "MESSAGE",
+                        "component_ids": [
+                            "7189670408365040373"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "7189670408365040373",
+                                "socket_names": []
+                            }
+                        ],
+                        "trigger_type": "EVENT"
+                    }
+                ],
+                "component_ids": [
+                    "7189670408365040373"
+                ],
+                "component_references": [
+                    {
+                        "component_id": "7189670408365040373",
+                        "socket_names": []
+                    }
+                ],
+                "created_date": "2023-01-17T09:13:08.932-08:00",
+                "updated_date": "2024-09-10T01:45:21.954-07:00",
+                "name": "friend_pending_reward_email_delivered",
+                "scope": "PUBLIC",
+                "enabled_on_states": [
+                    "LIVE",
+                    "PAUSED",
+                    "ENDED"
+                ],
+                "selectors": [
+                    "MATCHING_CAMPAIGN"
+                ],
+                "actions": [],
+                "aliases": [],
+                "data": [
+                    {
+                        "name": "message_id",
+                        "value": "spel@runtime:context.causeEvent.messageId",
+                        "scope": "PUBLIC",
+                        "dimension": false,
+                        "persist_types": [],
+                        "default_value": null,
+                        "key_type": "NONE",
+                        "enabled": true,
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ]
+                    }
+                ],
+                "journey_names": [
+                    "FRIEND"
+                ],
+                "send_policy": "ALL",
+                "type": "CONTROLLER",
+                "controller_id": "7189670407151677533",
+                "isFirstOrder": false,
+                "children": []
+            }
+        ],
+        "MARKETING": []
+    },
+    "advocate_pending_reward_email_delivered": {
+        "ADVOCATE": [
+            {
+                "id": "7189670407606959035",
+                "enabled": true,
+                "triggers": [
+                    {
+                        "trigger_id": "7189670407724492665",
+                        "trigger_phase": "MATCHING",
+                        "trigger_name": "EVENT",
+                        "trigger_description": null,
+                        "enabled": true,
+                        "negated": false,
+                        "event_names": [
+                            "advocate_pending_reward_email.email_delivered"
+                        ],
+                        "event_type": "MESSAGE",
+                        "component_ids": [
+                            "7189670406432427572"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "7189670406432427572",
+                                "socket_names": []
+                            }
+                        ],
+                        "trigger_type": "EVENT"
+                    }
+                ],
+                "component_ids": [
+                    "7189670406432427572"
+                ],
+                "component_references": [
+                    {
+                        "component_id": "7189670406432427572",
+                        "socket_names": []
+                    }
+                ],
+                "created_date": "2023-01-17T09:13:08.933-08:00",
+                "updated_date": "2024-09-10T01:45:21.954-07:00",
+                "name": "advocate_pending_reward_email_delivered",
+                "scope": "PUBLIC",
+                "enabled_on_states": [
+                    "LIVE",
+                    "PAUSED",
+                    "ENDED"
+                ],
+                "selectors": [
+                    "MATCHING_CAMPAIGN"
+                ],
+                "actions": [],
+                "aliases": [],
+                "data": [
+                    {
+                        "name": "message_id",
+                        "value": "spel@runtime:context.causeEvent.messageId",
+                        "scope": "PUBLIC",
+                        "dimension": false,
+                        "persist_types": [],
+                        "default_value": null,
+                        "key_type": "NONE",
+                        "enabled": true,
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ]
+                    }
+                ],
+                "journey_names": [
+                    "ADVOCATE"
+                ],
+                "send_policy": "ALL",
+                "type": "CONTROLLER",
+                "controller_id": "7189670407606959035",
+                "isFirstOrder": false,
+                "children": []
+            }
+        ],
+        "FRIEND": [],
+        "MARKETING": []
+    },
+    "shared": {
+        "ADVOCATE": [
+            {
+                "id": "7189670408593133026",
+                "enabled": true,
+                "triggers": [
+                    {
+                        "trigger_id": "7189670406053110494",
+                        "trigger_phase": "MATCHING",
+                        "trigger_name": "EVENT",
+                        "trigger_description": null,
+                        "enabled": true,
+                        "negated": false,
+                        "event_names": [
+                            "share",
+                            "shared",
+                            "extole.share"
+                        ],
+                        "event_type": "INPUT",
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ],
+                        "trigger_type": "EVENT"
+                    },
+                    {
+                        "trigger_id": "7189670409048657078",
+                        "trigger_phase": "QUALITY",
+                        "trigger_name": "LEGACY_QUALITY",
+                        "trigger_description": null,
+                        "enabled": true,
+                        "negated": false,
+                        "action_type": "ANY_SHARE",
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ],
+                        "trigger_type": "LEGACY_QUALITY"
+                    }
+                ],
+                "component_ids": [
+                    "4193408865040769817"
+                ],
+                "component_references": [
+                    {
+                        "component_id": "4193408865040769817",
+                        "socket_names": []
+                    }
+                ],
+                "created_date": "2023-01-17T09:13:08.927-08:00",
+                "updated_date": "2024-09-10T01:45:21.954-07:00",
+                "name": "share_event",
+                "scope": "PUBLIC",
+                "enabled_on_states": [
+                    "LIVE"
+                ],
+                "selectors": [
+                    "MATCHING_CAMPAIGN",
+                    "TARGET"
+                ],
+                "actions": [
+                    {
+                        "action_id": "7189670405095452606",
+                        "quality": "ALWAYS",
+                        "incentivize_action_type": "SHARE",
+                        "overrides": {
+                            "SOURCE_URL": "{{event.data['share.source_url']}}",
+                            "ZONE": "extole.share",
+                            "CHANNEL": "{{event.data['share.channel']}}",
+                            "RECIPIENT": "{{event.data['share.recipient']}}",
+                            "MESSAGE": "{{event.data['share.message']}}"
+                        },
+                        "action_name": null,
+                        "data": {},
+                        "enabled": true,
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ],
+                        "review_status": "PENDING",
+                        "action_type": "INCENTIVIZE"
+                    },
+                    {
+                        "action_id": "7189670406352089562",
+                        "quality": "ALWAYS",
+                        "enabled": true,
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ],
+                        "action_type": "SHARE_EVENT"
+                    },
+                    {
+                        "action_id": "7189670408511916958",
+                        "quality": "ALWAYS",
+                        "polling_id": "{{event.rootEventId}}",
+                        "name": "share",
+                        "enabled": true,
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ],
+                        "action_type": "STEP_SIGNAL"
+                    }
+                ],
+                "aliases": [
+                    "shared",
+                    "advocated"
+                ],
+                "data": [
+                    {
+                        "name": "partner_share_id",
+                        "value": "spel@runtime:context.causeEvent.data['partner_share_id']",
+                        "scope": "PUBLIC",
+                        "dimension": false,
+                        "persist_types": [],
+                        "default_value": null,
+                        "key_type": "UNIQUE_PARTNER_EVENT_KEY",
+                        "enabled": true,
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ]
+                    }
+                ],
+                "journey_names": [
+                    "ADVOCATE"
+                ],
+                "send_policy": "ALL",
+                "type": "CONTROLLER",
+                "controller_id": "7189670408593133026",
+                "isFirstOrder": true,
+                "children": [
+                    "extole_share_email",
+                    "stats_email_entry",
+                    "advocate_welcome_email",
+                    "share_email"
+                ]
+            }
+        ],
+        "FRIEND": [],
+        "MARKETING": []
+    },
+    "friend_pending_reward_email_opened": {
+        "ADVOCATE": [],
+        "FRIEND": [
+            {
+                "id": "7189670405066885228",
+                "enabled": true,
+                "triggers": [
+                    {
+                        "trigger_id": "7189670405146586198",
+                        "trigger_phase": "MATCHING",
+                        "trigger_name": "EVENT",
+                        "trigger_description": null,
+                        "enabled": true,
+                        "negated": false,
+                        "event_names": [
+                            "friend_pending_reward_email.email_opened"
+                        ],
+                        "event_type": "MESSAGE",
+                        "component_ids": [
+                            "7189670408365040373"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "7189670408365040373",
+                                "socket_names": []
+                            }
+                        ],
+                        "trigger_type": "EVENT"
+                    }
+                ],
+                "component_ids": [
+                    "7189670408365040373"
+                ],
+                "component_references": [
+                    {
+                        "component_id": "7189670408365040373",
+                        "socket_names": []
+                    }
+                ],
+                "created_date": "2023-01-17T09:13:08.932-08:00",
+                "updated_date": "2024-09-10T01:45:21.954-07:00",
+                "name": "friend_pending_reward_email_opened",
+                "scope": "PUBLIC",
+                "enabled_on_states": [
+                    "LIVE",
+                    "PAUSED",
+                    "ENDED"
+                ],
+                "selectors": [
+                    "MATCHING_CAMPAIGN"
+                ],
+                "actions": [],
+                "aliases": [
+                    "promotion_viewed",
+                    "promotion_email_opened"
+                ],
+                "data": [
+                    {
+                        "name": "message_id",
+                        "value": "spel@runtime:context.causeEvent.messageId",
+                        "scope": "PUBLIC",
+                        "dimension": false,
+                        "persist_types": [],
+                        "default_value": null,
+                        "key_type": "NONE",
+                        "enabled": true,
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ]
+                    }
+                ],
+                "journey_names": [
+                    "FRIEND"
+                ],
+                "send_policy": "ALL",
+                "type": "CONTROLLER",
+                "controller_id": "7189670405066885228",
+                "isFirstOrder": false,
+                "children": []
+            }
+        ],
+        "MARKETING": []
+    },
+    "advocate_pending_reward_email_opened": {
+        "ADVOCATE": [
+            {
+                "id": "7189670404837040581",
+                "enabled": true,
+                "triggers": [
+                    {
+                        "trigger_id": "7189670407706058559",
+                        "trigger_phase": "MATCHING",
+                        "trigger_name": "EVENT",
+                        "trigger_description": null,
+                        "enabled": true,
+                        "negated": false,
+                        "event_names": [
+                            "advocate_pending_reward_email.email_opened"
+                        ],
+                        "event_type": "MESSAGE",
+                        "component_ids": [
+                            "7189670406432427572"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "7189670406432427572",
+                                "socket_names": []
+                            }
+                        ],
+                        "trigger_type": "EVENT"
+                    }
+                ],
+                "component_ids": [
+                    "7189670406432427572"
+                ],
+                "component_references": [
+                    {
+                        "component_id": "7189670406432427572",
+                        "socket_names": []
+                    }
+                ],
+                "created_date": "2023-01-17T09:13:08.933-08:00",
+                "updated_date": "2024-09-10T01:45:21.954-07:00",
+                "name": "advocate_pending_reward_email_opened",
+                "scope": "PUBLIC",
+                "enabled_on_states": [
+                    "LIVE",
+                    "PAUSED",
+                    "ENDED"
+                ],
+                "selectors": [
+                    "MATCHING_CAMPAIGN"
+                ],
+                "actions": [],
+                "aliases": [
+                    "promotion_viewed",
+                    "promotion_email_opened"
+                ],
+                "data": [
+                    {
+                        "name": "message_id",
+                        "value": "spel@runtime:context.causeEvent.messageId",
+                        "scope": "PUBLIC",
+                        "dimension": false,
+                        "persist_types": [],
+                        "default_value": null,
+                        "key_type": "NONE",
+                        "enabled": true,
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ]
+                    }
+                ],
+                "journey_names": [
+                    "ADVOCATE"
+                ],
+                "send_policy": "ALL",
+                "type": "CONTROLLER",
+                "controller_id": "7189670404837040581",
+                "isFirstOrder": false,
+                "children": []
+            }
+        ],
+        "FRIEND": [],
+        "MARKETING": []
+    },
+    "share_viewed": {
+        "ADVOCATE": [],
+        "FRIEND": [
+            {
+                "id": "7189670405091606042",
+                "enabled": true,
+                "triggers": [
+                    {
+                        "trigger_id": "7189670407262605546",
+                        "trigger_phase": "MATCHING",
+                        "trigger_name": "EVENT",
+                        "trigger_description": null,
+                        "enabled": true,
+                        "negated": false,
+                        "event_names": [
+                            "friend_share_email_reminder.email_opened"
+                        ],
+                        "event_type": "MESSAGE",
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ],
+                        "trigger_type": "EVENT"
+                    }
+                ],
+                "component_ids": [
+                    "4193408865040769817"
+                ],
+                "component_references": [
+                    {
+                        "component_id": "4193408865040769817",
+                        "socket_names": []
+                    }
+                ],
+                "created_date": "2023-01-17T09:13:08.931-08:00",
+                "updated_date": "2024-09-10T01:45:21.954-07:00",
+                "name": "share_email_reminder_opened",
+                "scope": "PUBLIC",
+                "enabled_on_states": [
+                    "LIVE",
+                    "PAUSED",
+                    "ENDED"
+                ],
+                "selectors": [
+                    "MATCHING_CAMPAIGN"
+                ],
+                "actions": [],
+                "aliases": [
+                    "share_viewed"
+                ],
+                "data": [
+                    {
+                        "name": "message_id",
+                        "value": "spel@runtime:context.causeEvent.messageId",
+                        "scope": "PUBLIC",
+                        "dimension": false,
+                        "persist_types": [],
+                        "default_value": null,
+                        "key_type": "NONE",
+                        "enabled": true,
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ]
+                    }
+                ],
+                "journey_names": [
+                    "FRIEND"
+                ],
+                "send_policy": "ALL",
+                "type": "CONTROLLER",
+                "controller_id": "7189670405091606042",
+                "isFirstOrder": false,
+                "children": []
+            },
+            {
+                "id": "7189670405190902913",
+                "enabled": true,
+                "triggers": [
+                    {
+                        "trigger_id": "7189670406803052317",
+                        "trigger_phase": "MATCHING",
+                        "trigger_name": "EVENT",
+                        "trigger_description": null,
+                        "enabled": true,
+                        "negated": false,
+                        "event_names": [
+                            "friend_share_email.email_opened"
+                        ],
+                        "event_type": "MESSAGE",
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ],
+                        "trigger_type": "EVENT"
+                    }
+                ],
+                "component_ids": [
+                    "4193408865040769817"
+                ],
+                "component_references": [
+                    {
+                        "component_id": "4193408865040769817",
+                        "socket_names": []
+                    }
+                ],
+                "created_date": "2023-01-17T09:13:08.93-08:00",
+                "updated_date": "2024-09-10T01:45:21.954-07:00",
+                "name": "share_email_opened",
+                "scope": "PUBLIC",
+                "enabled_on_states": [
+                    "LIVE",
+                    "PAUSED",
+                    "ENDED"
+                ],
+                "selectors": [
+                    "MATCHING_CAMPAIGN"
+                ],
+                "actions": [],
+                "aliases": [
+                    "share_viewed"
+                ],
+                "data": [
+                    {
+                        "name": "message_id",
+                        "value": "spel@runtime:context.causeEvent.messageId",
+                        "scope": "PUBLIC",
+                        "dimension": false,
+                        "persist_types": [],
+                        "default_value": null,
+                        "key_type": "NONE",
+                        "enabled": true,
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ]
+                    }
+                ],
+                "journey_names": [
+                    "FRIEND"
+                ],
+                "send_policy": "ALL",
+                "type": "CONTROLLER",
+                "controller_id": "7189670405190902913",
+                "isFirstOrder": false,
+                "children": []
+            }
+        ],
+        "MARKETING": []
+    },
+    "share_click": {
+        "ADVOCATE": [],
+        "FRIEND": [
+            {
+                "id": "7189670407252077171",
+                "enabled": true,
+                "triggers": [
+                    {
+                        "trigger_id": "7189670405562110044",
+                        "trigger_phase": "MATCHING",
+                        "trigger_name": "EVENT",
+                        "trigger_description": null,
+                        "enabled": true,
+                        "negated": false,
+                        "event_names": [
+                            "share_destination"
+                        ],
+                        "event_type": "INPUT",
+                        "component_ids": [
+                            "7189670408547021044",
+                            "7189670405391222269"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "7189670408547021044",
+                                "socket_names": []
+                            },
+                            {
+                                "component_id": "7189670405391222269",
+                                "socket_names": []
+                            }
+                        ],
+                        "trigger_type": "EVENT"
+                    },
+                    {
+                        "trigger_id": "7189670404832280405",
+                        "trigger_phase": "QUALITY",
+                        "trigger_name": "LEGACY_QUALITY",
+                        "trigger_description": null,
+                        "enabled": true,
+                        "negated": false,
+                        "action_type": "GENERIC_ACTION_1",
+                        "component_ids": [
+                            "7189670408547021044",
+                            "7189670405391222269"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "7189670408547021044",
+                                "socket_names": []
+                            },
+                            {
+                                "component_id": "7189670405391222269",
+                                "socket_names": []
+                            }
+                        ],
+                        "trigger_type": "LEGACY_QUALITY"
+                    }
+                ],
+                "component_ids": [
+                    "7189670408547021044",
+                    "7189670405391222269"
+                ],
+                "component_references": [
+                    {
+                        "component_id": "7189670408547021044",
+                        "socket_names": []
+                    },
+                    {
+                        "component_id": "7189670405391222269",
+                        "socket_names": []
+                    }
+                ],
+                "created_date": "2023-01-17T09:13:08.929-08:00",
+                "updated_date": "2024-09-10T01:45:21.954-07:00",
+                "name": "share_click",
+                "scope": "PUBLIC",
+                "enabled_on_states": [
+                    "LIVE",
+                    "PAUSED"
+                ],
+                "selectors": [
+                    "TARGET"
+                ],
+                "actions": [
+                    {
+                        "action_id": "7189670408857399501",
+                        "quality": "ALWAYS",
+                        "incentivize_action_type": "CLICK",
+                        "overrides": {},
+                        "action_name": null,
+                        "data": {},
+                        "enabled": true,
+                        "component_ids": [
+                            "7189670408547021044",
+                            "7189670405391222269"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "7189670408547021044",
+                                "socket_names": []
+                            },
+                            {
+                                "component_id": "7189670405391222269",
+                                "socket_names": []
+                            }
+                        ],
+                        "review_status": "PENDING",
+                        "action_type": "INCENTIVIZE"
+                    }
+                ],
+                "aliases": [],
+                "data": [],
+                "journey_names": [
+                    "FRIEND"
+                ],
+                "send_policy": "ALL",
+                "type": "CONTROLLER",
+                "controller_id": "7189670407252077171",
+                "isFirstOrder": true,
+                "children": []
+            }
+        ],
+        "MARKETING": []
+    },
+    "friend_viewed": {
+        "ADVOCATE": [],
+        "FRIEND": [],
+        "MARKETING": []
+    },
+    "register": {
+        "ADVOCATE": [],
+        "FRIEND": [
+            {
+                "id": "7189670405886305521",
+                "enabled": true,
+                "triggers": [
+                    {
+                        "trigger_id": "7189670407310546392",
+                        "trigger_phase": "MATCHING",
+                        "trigger_name": "EVENT",
+                        "trigger_description": null,
+                        "enabled": true,
+                        "negated": false,
+                        "event_names": [
+                            "signed_up"
+                        ],
+                        "event_type": "INPUT",
+                        "component_ids": [
+                            "7189670408547021044"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "7189670408547021044",
+                                "socket_names": []
+                            }
+                        ],
+                        "trigger_type": "EVENT"
+                    },
+                    {
+                        "trigger_id": "7189670407137322747",
+                        "trigger_phase": "QUALITY",
+                        "trigger_name": "HAS_PRIOR_REWARD",
+                        "trigger_description": null,
+                        "enabled": true,
+                        "negated": false,
+                        "filter_names": [
+                            "signed_up_friend"
+                        ],
+                        "filter_scope": "PROGRAM",
+                        "filter_tags": [
+                            "FRIEND_ANY_SIGN_UP"
+                        ],
+                        "filter_min_age": null,
+                        "filter_max_age": null,
+                        "filter_min_date": null,
+                        "filter_max_date": null,
+                        "filter_reward_supplier_ids": [],
+                        "filter_face_value_types": [],
+                        "filter_states": [
+                            "SENT",
+                            "EARNED",
+                            "FULFILLED",
+                            "REDEEMED"
+                        ],
+                        "filter_expressions": [],
+                        "sum_of_face_value_max": null,
+                        "sum_of_face_value_min": null,
+                        "count_max": null,
+                        "count_min": null,
+                        "count_matches": [
+                            0
+                        ],
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ],
+                        "trigger_type": "HAS_PRIOR_REWARD"
+                    },
+                    {
+                        "trigger_id": "7189670408785033523",
+                        "trigger_phase": "QUALITY",
+                        "trigger_name": "HAS_PRIOR_STEP",
+                        "trigger_description": null,
+                        "enabled": true,
+                        "negated": false,
+                        "filter_names": [
+                            "signed_up"
+                        ],
+                        "filter_scope": "PROGRAM",
+                        "filter_partner_event_id_name": null,
+                        "filter_partner_event_id_value": null,
+                        "filter_partner_event_id": null,
+                        "filter_min_age": null,
+                        "filter_max_age": 30,
+                        "filter_min_value": null,
+                        "filter_max_value": null,
+                        "filter_quality": "HIGH",
+                        "filter_expressions": [],
+                        "filter_expression": true,
+                        "filter_program_label": null,
+                        "filter_campaign_id": null,
+                        "filter_program_labels": [],
+                        "filter_campaign_ids": [],
+                        "filter_min_date": null,
+                        "filter_max_date": null,
+                        "sum_of_value_min": null,
+                        "sum_of_value_max": null,
+                        "count_min": null,
+                        "count_max": null,
+                        "count_matches": [
+                            0
+                        ],
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ],
+                        "person_id": null,
+                        "trigger_type": "HAS_PRIOR_STEP"
+                    },
+                    {
+                        "trigger_id": "7189670405470202455",
+                        "trigger_phase": "QUALITY",
+                        "trigger_name": "LEGACY_QUALITY",
+                        "trigger_description": null,
+                        "enabled": true,
+                        "negated": false,
+                        "action_type": "GENERIC_ACTION_2",
+                        "component_ids": [
+                            "7189670408547021044"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "7189670408547021044",
+                                "socket_names": []
+                            }
+                        ],
+                        "trigger_type": "LEGACY_QUALITY"
+                    }
+                ],
+                "component_ids": [
+                    "7189670408547021044"
+                ],
+                "component_references": [
+                    {
+                        "component_id": "7189670408547021044",
+                        "socket_names": []
+                    }
+                ],
+                "created_date": "2023-01-17T09:13:08.929-08:00",
+                "updated_date": "2024-09-10T01:45:21.954-07:00",
+                "name": "signed_up",
+                "scope": "PUBLIC",
+                "enabled_on_states": [
+                    "LIVE",
+                    "PAUSED"
+                ],
+                "selectors": [
+                    "BEST_REFERRAL"
+                ],
+                "actions": [
+                    {
+                        "action_id": "7189670405561357011",
+                        "quality": "HIGH",
+                        "reward_name": "signed_up_friend",
+                        "reward_supplier_id": "9816cb413d8acf41c243d486",
+                        "tags": [
+                            "FRIEND_ANY_SIGNED_UP"
+                        ],
+                        "data": {
+                            "other_person_id": "javascript@runtime:context.getStepEvent().getReferralContext() != null ? context.getStepEvent().getReferralContext().getOtherPersonId() : null",
+                            "earned_event_value": "javascript@runtime:context.getStepEvent().getValue()",
+                            "partner_event_id_name": "javascript@runtime:context.getStepEvent().getPartnerEventId() != null ? context.getStepEvent().getPartnerEventId().getName() : null",
+                            "partner_event_id_value": "javascript@runtime:context.getStepEvent().getPartnerEventId() != null ? context.getStepEvent().getPartnerEventId().getValue() : null",
+                            "email": "javascript@runtime:context.getPerson().getNormalizedEmail()"
+                        },
+                        "value_of_event_being_rewarded": "javascript@runtime:context.getStepEvent().getValue()",
+                        "enabled": true,
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ],
+                        "reward_action_id": "javascript@runtime:context.getCauseEvent().getRootEventId()",
+                        "action_type": "EARN_REWARD",
+                        "slots": [
+                            "FRIEND_ANY_SIGNED_UP"
+                        ]
+                    },
+                    {
+                        "action_id": "7189670405153191329",
+                        "quality": "ALWAYS",
+                        "incentivize_action_type": "GENERIC_ACTION_2",
+                        "overrides": {},
+                        "action_name": "sign_up",
+                        "data": {},
+                        "enabled": true,
+                        "component_ids": [
+                            "7189670408547021044"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "7189670408547021044",
+                                "socket_names": []
+                            }
+                        ],
+                        "review_status": "PENDING",
+                        "action_type": "INCENTIVIZE"
+                    },
+                    {
+                        "action_id": "7189670406556587368",
+                        "quality": "ALWAYS",
+                        "polling_id": "{{event.getId()}}",
+                        "name": "signal",
+                        "enabled": true,
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ],
+                        "action_type": "STEP_SIGNAL"
+                    }
+                ],
+                "aliases": [
+                    "register"
+                ],
+                "data": [
+                    {
+                        "name": "partner_user_id",
+                        "value": "spel@runtime:context.causeEvent.data['partner_user_id']",
+                        "scope": "PUBLIC",
+                        "dimension": false,
+                        "persist_types": [],
+                        "default_value": null,
+                        "key_type": "UNIQUE_PARTNER_EVENT_KEY",
+                        "enabled": true,
+                        "component_ids": [
+                            "7189670408547021044"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "7189670408547021044",
+                                "socket_names": []
+                            }
+                        ]
+                    }
+                ],
+                "journey_names": [
+                    "FRIEND"
+                ],
+                "send_policy": "ALL",
+                "type": "CONTROLLER",
+                "controller_id": "7189670405886305521",
+                "isFirstOrder": true,
+                "children": [
+                    "signed_up_friend_reward_redeemed_on_converted",
+                    "signed_up_friend_reward_earned"
+                ]
+            },
+            {
+                "id": "7189670407383242318",
+                "enabled": true,
+                "triggers": [
+                    {
+                        "trigger_id": "7189670406798715689",
+                        "trigger_phase": "MATCHING",
+                        "trigger_name": "EVENT",
+                        "trigger_description": null,
+                        "enabled": true,
+                        "negated": false,
+                        "event_names": [
+                            "manual_signed_up"
+                        ],
+                        "event_type": "INPUT",
+                        "component_ids": [
+                            "7189670408547021044"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "7189670408547021044",
+                                "socket_names": []
+                            }
+                        ],
+                        "trigger_type": "EVENT"
+                    },
+                    {
+                        "trigger_id": "7189670407938339434",
+                        "trigger_phase": "QUALITY",
+                        "trigger_name": "LEGACY_QUALITY",
+                        "trigger_description": null,
+                        "enabled": true,
+                        "negated": false,
+                        "action_type": "GENERIC_ACTION_10",
+                        "component_ids": [
+                            "7189670408547021044"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "7189670408547021044",
+                                "socket_names": []
+                            }
+                        ],
+                        "trigger_type": "LEGACY_QUALITY"
+                    }
+                ],
+                "component_ids": [
+                    "7189670408547021044"
+                ],
+                "component_references": [
+                    {
+                        "component_id": "7189670408547021044",
+                        "socket_names": []
+                    }
+                ],
+                "created_date": "2023-01-17T09:13:08.936-08:00",
+                "updated_date": "2024-09-10T01:45:21.954-07:00",
+                "name": "manual_signed_up",
+                "scope": "PUBLIC",
+                "enabled_on_states": [
+                    "LIVE",
+                    "PAUSED"
+                ],
+                "selectors": [
+                    "BEST_REFERRAL"
+                ],
+                "actions": [
+                    {
+                        "action_id": "7189670405758911414",
+                        "quality": "HIGH",
+                        "reward_name": "signed_up_friend",
+                        "reward_supplier_id": "9816cb413d8acf41c243d486",
+                        "tags": [
+                            "FRIEND_ANY_SIGNED_UP"
+                        ],
+                        "data": {
+                            "other_person_id": "javascript@runtime:context.getStepEvent().getReferralContext() != null ? context.getStepEvent().getReferralContext().getOtherPersonId() : null",
+                            "earned_event_value": "javascript@runtime:context.getStepEvent().getValue()",
+                            "partner_event_id_name": "javascript@runtime:context.getStepEvent().getPartnerEventId() != null ? context.getStepEvent().getPartnerEventId().getName() : null",
+                            "partner_event_id_value": "javascript@runtime:context.getStepEvent().getPartnerEventId() != null ? context.getStepEvent().getPartnerEventId().getValue() : null",
+                            "email": "javascript@runtime:context.getPerson().getNormalizedEmail()"
+                        },
+                        "value_of_event_being_rewarded": "javascript@runtime:context.getStepEvent().getValue()",
+                        "enabled": true,
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ],
+                        "reward_action_id": "javascript@runtime:context.getCauseEvent().getRootEventId()",
+                        "action_type": "EARN_REWARD",
+                        "slots": [
+                            "FRIEND_ANY_SIGNED_UP"
+                        ]
+                    },
+                    {
+                        "action_id": "7189670406949302991",
+                        "quality": "ALWAYS",
+                        "incentivize_action_type": "GENERIC_ACTION_10",
+                        "overrides": {},
+                        "action_name": "manual_sign_up",
+                        "data": {},
+                        "enabled": true,
+                        "component_ids": [
+                            "7189670408547021044"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "7189670408547021044",
+                                "socket_names": []
+                            }
+                        ],
+                        "review_status": "PENDING",
+                        "action_type": "INCENTIVIZE"
+                    }
+                ],
+                "aliases": [
+                    "register"
+                ],
+                "data": [
+                    {
+                        "name": "partner_user_id",
+                        "value": "spel@runtime:context.causeEvent.data['partner_user_id']",
+                        "scope": "PUBLIC",
+                        "dimension": false,
+                        "persist_types": [],
+                        "default_value": null,
+                        "key_type": "UNIQUE_PARTNER_EVENT_KEY",
+                        "enabled": true,
+                        "component_ids": [
+                            "7189670408547021044"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "7189670408547021044",
+                                "socket_names": []
+                            }
+                        ]
+                    }
+                ],
+                "journey_names": [
+                    "FRIEND"
+                ],
+                "send_policy": "ALL",
+                "type": "CONTROLLER",
+                "controller_id": "7189670407383242318",
+                "isFirstOrder": true,
+                "children": [
+                    "signed_up_friend_reward_redeemed_on_converted",
+                    "signed_up_friend_reward_earned"
+                ]
+            }
+        ],
+        "MARKETING": []
+    },
+    "friend_reward_earned": {
+        "ADVOCATE": [],
+        "FRIEND": [
+            {
+                "id": "7189670407130609676",
+                "enabled": true,
+                "triggers": [
+                    {
+                        "trigger_id": "7189670408415158692",
+                        "trigger_phase": "MATCHING",
+                        "trigger_name": "REWARD_EVENT",
+                        "trigger_description": null,
+                        "enabled": true,
+                        "negated": false,
+                        "reward_states": [
+                            "EARNED"
+                        ],
+                        "event_names": [
+                            "signed_up_friend",
+                            "registered_friend"
+                        ],
+                        "slots": [],
+                        "tags": [],
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ],
+                        "trigger_type": "REWARD_EVENT"
+                    }
+                ],
+                "component_ids": [
+                    "4193408865040769817"
+                ],
+                "component_references": [
+                    {
+                        "component_id": "4193408865040769817",
+                        "socket_names": []
+                    }
+                ],
+                "created_date": "2023-01-17T09:13:08.934-08:00",
+                "updated_date": "2024-09-10T01:45:21.954-07:00",
+                "name": "signed_up_friend_reward_earned",
+                "scope": "PUBLIC",
+                "enabled_on_states": [
+                    "LIVE",
+                    "PAUSED",
+                    "ENDED"
+                ],
+                "selectors": [
+                    "MATCHING_CAMPAIGN"
+                ],
+                "actions": [],
+                "aliases": [
+                    "reward_earned",
+                    "signed_up_reward_earned",
+                    "friend_reward_earned"
+                ],
+                "data": [],
+                "journey_names": [
+                    "FRIEND"
+                ],
+                "send_policy": "ALL",
+                "type": "CONTROLLER",
+                "controller_id": "7189670407130609676",
+                "isFirstOrder": false,
+                "children": []
+            },
+            {
+                "id": "7189670408223161363",
+                "enabled": true,
+                "triggers": [
+                    {
+                        "trigger_id": "7189670407906090191",
+                        "trigger_phase": "MATCHING",
+                        "trigger_name": "REWARD_EVENT",
+                        "trigger_description": null,
+                        "enabled": true,
+                        "negated": false,
+                        "reward_states": [
+                            "EARNED"
+                        ],
+                        "event_names": [
+                            "converted_friend"
+                        ],
+                        "slots": [],
+                        "tags": [],
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ],
+                        "trigger_type": "REWARD_EVENT"
+                    }
+                ],
+                "component_ids": [
+                    "4193408865040769817"
+                ],
+                "component_references": [
+                    {
+                        "component_id": "4193408865040769817",
+                        "socket_names": []
+                    }
+                ],
+                "created_date": "2023-01-17T09:13:08.934-08:00",
+                "updated_date": "2024-09-10T01:45:21.954-07:00",
+                "name": "converted_friend_reward_earned",
+                "scope": "PUBLIC",
+                "enabled_on_states": [
+                    "LIVE",
+                    "PAUSED",
+                    "ENDED"
+                ],
+                "selectors": [
+                    "MATCHING_CAMPAIGN"
+                ],
+                "actions": [],
+                "aliases": [
+                    "converted_reward_earned",
+                    "reward_earned",
+                    "friend_reward_earned"
+                ],
+                "data": [
+                    {
+                        "name": "value",
+                        "value": "spel@runtime:context.causeEvent.reward.valueOfRewardedEvent",
+                        "scope": "PUBLIC",
+                        "dimension": false,
+                        "persist_types": [],
+                        "default_value": null,
+                        "key_type": "VALUE",
+                        "enabled": true,
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ]
+                    }
+                ],
+                "journey_names": [
+                    "FRIEND"
+                ],
+                "send_policy": "ALL",
+                "type": "CONTROLLER",
+                "controller_id": "7189670408223161363",
+                "isFirstOrder": false,
+                "children": []
+            },
+            {
+                "id": "7189670408622438222",
+                "enabled": true,
+                "triggers": [
+                    {
+                        "trigger_id": "7189670405748681240",
+                        "trigger_phase": "MATCHING",
+                        "trigger_name": "REWARD_EVENT",
+                        "trigger_description": null,
+                        "enabled": true,
+                        "negated": false,
+                        "reward_states": [
+                            "EARNED"
+                        ],
+                        "event_names": [
+                            "share_clicked_friend"
+                        ],
+                        "slots": [],
+                        "tags": [],
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ],
+                        "trigger_type": "REWARD_EVENT"
+                    }
+                ],
+                "component_ids": [
+                    "4193408865040769817"
+                ],
+                "component_references": [
+                    {
+                        "component_id": "4193408865040769817",
+                        "socket_names": []
+                    }
+                ],
+                "created_date": "2023-01-17T09:13:08.934-08:00",
+                "updated_date": "2024-09-10T01:45:21.954-07:00",
+                "name": "share_clicked_friend_reward_earned",
+                "scope": "PUBLIC",
+                "enabled_on_states": [
+                    "LIVE",
+                    "PAUSED",
+                    "ENDED"
+                ],
+                "selectors": [
+                    "MATCHING_CAMPAIGN"
+                ],
+                "actions": [],
+                "aliases": [
+                    "reward_earned",
+                    "friend_reward_earned"
+                ],
+                "data": [],
+                "journey_names": [
+                    "FRIEND"
+                ],
+                "send_policy": "ALL",
+                "type": "CONTROLLER",
+                "controller_id": "7189670408622438222",
+                "isFirstOrder": false,
+                "children": []
+            }
+        ],
+        "MARKETING": []
+    },
+    "converted": {
+        "ADVOCATE": [],
+        "FRIEND": [
+            {
+                "id": "7189670408712849749",
+                "enabled": true,
+                "triggers": [
+                    {
+                        "trigger_id": "7189670405069920533",
+                        "trigger_phase": "MATCHING",
+                        "trigger_name": "EVENT",
+                        "trigger_description": null,
+                        "enabled": true,
+                        "negated": false,
+                        "event_names": [
+                            "conversion"
+                        ],
+                        "event_type": "INPUT",
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ],
+                        "trigger_type": "EVENT"
+                    },
+                    {
+                        "trigger_id": "7189670406434679901",
+                        "trigger_phase": "QUALITY",
+                        "trigger_name": "LEGACY_QUALITY",
+                        "trigger_description": null,
+                        "enabled": true,
+                        "negated": false,
+                        "action_type": "ANY_PURCHASE",
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ],
+                        "trigger_type": "LEGACY_QUALITY"
+                    }
+                ],
+                "component_ids": [
+                    "4193408865040769817"
+                ],
+                "component_references": [
+                    {
+                        "component_id": "4193408865040769817",
+                        "socket_names": []
+                    }
+                ],
+                "created_date": "2023-01-17T09:13:08.929-08:00",
+                "updated_date": "2024-09-10T01:45:21.954-07:00",
+                "name": "converted",
+                "scope": "PUBLIC",
+                "enabled_on_states": [
+                    "LIVE",
+                    "PAUSED"
+                ],
+                "selectors": [
+                    "BEST_REFERRAL"
+                ],
+                "actions": [
+                    {
+                        "action_id": "7189670408735599755",
+                        "quality": "ALWAYS",
+                        "incentivize_action_type": "PURCHASE",
+                        "overrides": {},
+                        "action_name": null,
+                        "data": {},
+                        "enabled": true,
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ],
+                        "review_status": "PENDING",
+                        "action_type": "INCENTIVIZE"
+                    }
+                ],
+                "aliases": [
+                    "transacted",
+                    "outcome",
+                    "conversion",
+                    "customer"
+                ],
+                "data": [
+                    {
+                        "name": "partner_conversion_id",
+                        "value": "spel@runtime:context.causeEvent.data['partner_conversion_id']",
+                        "scope": "PUBLIC",
+                        "dimension": false,
+                        "persist_types": [],
+                        "default_value": null,
+                        "key_type": "UNIQUE_PARTNER_EVENT_KEY",
+                        "enabled": true,
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ]
+                    },
+                    {
+                        "name": "value",
+                        "value": "spel@runtime:context.causeEvent.data['cart_value']",
+                        "scope": "PUBLIC",
+                        "dimension": false,
+                        "persist_types": [],
+                        "default_value": null,
+                        "key_type": "VALUE",
+                        "enabled": true,
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ]
+                    }
+                ],
+                "journey_names": [
+                    "FRIEND"
+                ],
+                "send_policy": "ALL",
+                "type": "CONTROLLER",
+                "controller_id": "7189670408712849749",
+                "isFirstOrder": true,
+                "children": [
+                    "friend_pending_reward_email_entry",
+                    "advocate_pending_reward_email_entry"
+                ]
+            }
+        ],
+        "MARKETING": []
+    },
+    "advocate_reward_earned": {
+        "ADVOCATE": [
+            {
+                "id": "7189670404836766657",
+                "enabled": true,
+                "triggers": [
+                    {
+                        "trigger_id": "7189670407465720161",
+                        "trigger_phase": "MATCHING",
+                        "trigger_name": "REWARD_EVENT",
+                        "trigger_description": null,
+                        "enabled": true,
+                        "negated": false,
+                        "reward_states": [
+                            "EARNED"
+                        ],
+                        "event_names": [
+                            "signed_up_advocate",
+                            "registered_advocate"
+                        ],
+                        "slots": [],
+                        "tags": [],
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ],
+                        "trigger_type": "REWARD_EVENT"
+                    }
+                ],
+                "component_ids": [
+                    "4193408865040769817"
+                ],
+                "component_references": [
+                    {
+                        "component_id": "4193408865040769817",
+                        "socket_names": []
+                    }
+                ],
+                "created_date": "2023-01-17T09:13:08.934-08:00",
+                "updated_date": "2024-09-10T01:45:21.954-07:00",
+                "name": "signed_up_advocate_reward_earned",
+                "scope": "PUBLIC",
+                "enabled_on_states": [
+                    "LIVE",
+                    "PAUSED",
+                    "ENDED"
+                ],
+                "selectors": [
+                    "MATCHING_CAMPAIGN"
+                ],
+                "actions": [],
+                "aliases": [
+                    "reward_earned",
+                    "signed_up_reward_earned",
+                    "advocate_reward_earned"
+                ],
+                "data": [],
+                "journey_names": [
+                    "ADVOCATE"
+                ],
+                "send_policy": "ALL",
+                "type": "CONTROLLER",
+                "controller_id": "7189670404836766657",
+                "isFirstOrder": false,
+                "children": []
+            },
+            {
+                "id": "7189670408446391594",
+                "enabled": true,
+                "triggers": [
+                    {
+                        "trigger_id": "7189670406497710502",
+                        "trigger_phase": "MATCHING",
+                        "trigger_name": "REWARD_EVENT",
+                        "trigger_description": null,
+                        "enabled": true,
+                        "negated": false,
+                        "reward_states": [
+                            "EARNED"
+                        ],
+                        "event_names": [
+                            "converted_advocate"
+                        ],
+                        "slots": [],
+                        "tags": [],
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ],
+                        "trigger_type": "REWARD_EVENT"
+                    }
+                ],
+                "component_ids": [
+                    "4193408865040769817"
+                ],
+                "component_references": [
+                    {
+                        "component_id": "4193408865040769817",
+                        "socket_names": []
+                    }
+                ],
+                "created_date": "2023-01-17T09:13:08.934-08:00",
+                "updated_date": "2024-09-10T01:45:21.954-07:00",
+                "name": "converted_advocate_reward_earned",
+                "scope": "PUBLIC",
+                "enabled_on_states": [
+                    "LIVE",
+                    "PAUSED",
+                    "ENDED"
+                ],
+                "selectors": [
+                    "MATCHING_CAMPAIGN"
+                ],
+                "actions": [],
+                "aliases": [
+                    "converted_reward_earned",
+                    "reward_earned",
+                    "advocate_reward_earned"
+                ],
+                "data": [
+                    {
+                        "name": "value",
+                        "value": "spel@runtime:context.causeEvent.reward.valueOfRewardedEvent",
+                        "scope": "PUBLIC",
+                        "dimension": false,
+                        "persist_types": [],
+                        "default_value": null,
+                        "key_type": "VALUE",
+                        "enabled": true,
+                        "component_ids": [
+                            "4193408865040769817"
+                        ],
+                        "component_references": [
+                            {
+                                "component_id": "4193408865040769817",
+                                "socket_names": []
+                            }
+                        ]
+                    }
+                ],
+                "journey_names": [
+                    "ADVOCATE"
+                ],
+                "send_policy": "ALL",
+                "type": "CONTROLLER",
+                "controller_id": "7189670408446391594",
+                "isFirstOrder": false,
+                "children": []
+            }
+        ],
+        "FRIEND": [],
+        "MARKETING": []
+    }
+}
