@@ -54,22 +54,23 @@ export default {
         return;
       }
       
-      axios.post(`http://localhost:8081/api/2fa/totp/validate`, { totpKey: this.twoFactorCode, email: "jora" })
-        .then(response => {
-          if (response.data && response.data.accessToken) {
-            alert('2FA Verified');
-            
-            localStorage.setItem('token', response.data.token);
-            localStorage.setItem('refreshToken', response.data.refreshToken);
-            this.$router.push('/home');
-          } else {
-            alert('Invalid 2FA code');
-          }
-        })
-        .catch(error => {
-          console.error('There was an error verifying the code:', error);
-          alert('An error occurred. Please try again.');
-        });
+      axios.post(`http://localhost:8081/2fa/qrcode/validate/${this.email}`, {
+        totpKey: this.twoFactorCode
+      })
+      .then(response => {
+        if (response.data && response.data.token) {
+          alert('2FA Verified');
+          
+          localStorage.setItem('token', response.data.token);
+          window.location.href = 'https://my.extole.com';
+        } else {
+          alert('Invalid 2FA code');
+        }
+      })
+      .catch(error => {
+        console.error('There was an error verifying the code:', error);
+        alert('An error occurred. Please try again.');
+      });
     }
   }
 };

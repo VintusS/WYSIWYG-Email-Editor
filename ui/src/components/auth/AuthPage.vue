@@ -98,8 +98,8 @@ export default {
         }
 
         try {
-          // Sign-up API request
-          const response = await axios.post('http://localhost:5432/2fa/users', {
+         // Sign-up API request
+          const response = await axios.post('http://localhost:8081/2fa/users', {
             email: this.email,
             password: this.password,
           });
@@ -119,7 +119,7 @@ export default {
       } else {
         try {
           // Login API request
-          await axios.post('http://localhost:5432/2fa/login', {
+          await axios.post('http://localhost:8081/2fa/login', {
             email: this.email,
             password: this.password,
           });
