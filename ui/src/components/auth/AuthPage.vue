@@ -99,13 +99,13 @@ export default {
 
         try {
           // Sign-up API request
-          // const response = await axios.post('http://localhost:8081/api/2fa/users/authenticate', {
-          //   email: this.email,
-          //   password: this.password,
-          // });
+          const response = await axios.post('http://localhost:5432/2fa/users', {
+            email: this.email,
+            password: this.password,
+          });
 
           // Get the QR code from the response
-          const qrCode = "aa";//response.data.qrCode; 
+          const qrCode = response.data.qrCode; 
 
           // Redirect to the QR code page with QR code as param
           this.$router.push({
@@ -119,7 +119,7 @@ export default {
       } else {
         try {
           // Login API request
-          await axios.post('http://localhost:8081/2fa/login', {
+          await axios.post('http://localhost:5432/2fa/login', {
             email: this.email,
             password: this.password,
           });
