@@ -1,0 +1,99 @@
+[
+  {
+    "mail_after_purchase_entry": {
+      "childs": {}
+    },
+    "id": "7410695263098413236",
+    "eventName": [
+      "conversion"
+    ]
+  },
+  {
+    "advocate_code_created": {
+      "childs": {}
+    },
+    "id": "7410695263172343730",
+    "eventName": []
+  },
+  {
+    "share_event": {
+      "childs": {}
+    },
+    "id": "7410695263480332411",
+    "eventName": [
+      "share",
+      "shared",
+      "extole.share"
+    ]
+  },
+  {
+    "converted": {
+      "childs": {}
+    },
+    "id": "7410695265136745640",
+    "eventName": [
+      "conversion"
+    ]
+  },
+  {
+    "returned": {
+      "childs": {}
+    },
+    "id": "7410695266663201860",
+    "eventName": [
+      "return"
+    ]
+  },
+  {
+    "shipped": {
+      "childs": {}
+    },
+    "id": "7410695266706665780",
+    "eventName": [
+      "ship"
+    ]
+  },
+  {
+    "share_click": {
+      "childs": {}
+    },
+    "id": "7410695458431731003",
+    "eventName": [
+      "share_destination"
+    ]
+  },
+  {
+    "signed_up": {
+      "childs": {}
+    },
+    "id": "7410695458671307166",
+    "eventName": [
+      "signed_up"
+    ]
+  },
+  {
+    "manual_signed_up": {
+      "childs": {}
+    },
+    "id": "7410695459880045924",
+    "eventName": [
+      "manual_signed_up"
+    ]
+  },
+  {
+    "referred": {
+      "childs": {}
+    },
+    "id": "7410695475926093970",
+    "eventName": []
+  },
+  {
+    "authentication_email_triggered": {
+      "childs": {}
+    },
+    "id": "7410695504966084321",
+    "eventName": [
+      "email_verification_requested"
+    ]
+  }
+]

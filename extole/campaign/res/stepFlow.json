@@ -1,0 +1,2120 @@
+[
+    {
+        "flow_step_id": "7410806970205082043",
+        "flow_path": "/business-events",
+        "sequence": 3,
+        "step_name": "shared",
+        "icon_type": "envelope",
+        "metrics": [
+            {
+                "id": "sjanqk6vbzf7w6ugekft",
+                "name": "Advocations",
+                "description": "Number of advocations in your Extole programs on behalf of your brand (e.g. a user has shared, left a rating or a review, or done some other brand-building activity).",
+                "expression": "event_count(advocated)",
+                "unit": "#",
+                "tags": [
+                    "client-programs-list-advocations",
+                    "event-funnel-report",
+                    "client-advocation-graph:advocations/default"
+                ],
+                "component_ids": [
+                    "7378866381217516857"
+                ]
+            },
+            {
+                "id": "sjanqk628uqo9d9h7xb9",
+                "name": "Shares",
+                "description": "Number of shares",
+                "expression": "event_count(shared)",
+                "unit": "#",
+                "tags": [
+                    "client-advocation-graph:shares",
+                    "promotion:revenue",
+                    "event-funnel-report",
+                    "channel",
+                    "promotion-bar:shares",
+                    "dashboard-graph"
+                ],
+                "component_ids": [
+                    "7378866381217516857"
+                ]
+            },
+            {
+                "id": "sjanqk1t5d726r42hpj9",
+                "name": "Advocates",
+                "description": "Unique people who have advocated on your behalf (e.g. the user has shared, or one of their friends has participated in a program using the user's link or code)",
+                "expression": "people_count(advocated)",
+                "unit": "#",
+                "tags": [
+                    "people-funnel-report"
+                ],
+                "component_ids": [
+                    "7378866381217516857"
+                ]
+            },
+            {
+                "id": "sjanqk5tv6yy6w3l1cwm",
+                "name": "Advocacy Rate",
+                "description": "(Advocates/Promo clicks) * 100. Advocacy Rate is the ratio of advocates to people clicking on promotions.",
+                "expression": "percentage(people_count(shared), people_count(promotion_clicked))",
+                "unit": "%",
+                "tags": [
+                    "people-funnel-report"
+                ],
+                "component_ids": [
+                    "7378866381217516857"
+                ]
+            },
+            {
+                "id": "sjanqk2kd3eu3rplsfi5",
+                "name": "Highest Quality Shares",
+                "description": "Number of shares that are highest quality",
+                "expression": "event_count(shared, quality:high)",
+                "unit": "#",
+                "tags": [
+                    "dashboard-graph:quality-view",
+                    "event-funnel-report"
+                ],
+                "component_ids": [
+                    "7378866381217516857"
+                ]
+            },
+            {
+                "id": "sjanqk2jo8p83l0jvg5j",
+                "name": "Share Rate",
+                "description": "(Shares/Share experience views) * 100. Share Rate is the ratio of shares to share experience views.",
+                "expression": "percentage(event_count(shared), event_count(share_experienced))",
+                "unit": "%",
+                "tags": [
+                    "event-funnel-report",
+                    "promotion:shares",
+                    "dashboard-rate"
+                ],
+                "component_ids": [
+                    "7378866381217516857"
+                ]
+            }
+        ],
+        "apps": [],
+        "tags": [],
+        "name": "Shared",
+        "icon_color": "primary",
+        "description": "The advocate has sent a share link to a friend or posted the link on a social channel",
+        "words": {
+            "singular_noun_name": "handlebars@buildtime:{{name}} Event",
+            "plural_noun_name": "handlebars@buildtime:{{name}} Events",
+            "verb_name": "handlebars@buildtime:{{name}}",
+            "rate_name": "handlebars@buildtime:{{name}} Event Rate",
+            "person_counting_name": "handlebars@buildtime:Unique {{name}} Events"
+        },
+        "component_ids": [
+            "7378866381217516857"
+        ]
+    },
+    {
+        "flow_step_id": "7410806966890734957",
+        "flow_path": "/business-events",
+        "sequence": 4,
+        "step_name": "share_viewed",
+        "icon_type": "envelope-open",
+        "metrics": [
+            {
+                "id": "sjanqk6hwb0u91g8gosd",
+                "name": "Email Opens",
+                "description": "Number of views of share emails",
+                "expression": "event_count(share_viewed)",
+                "unit": "#",
+                "tags": [
+                    "event-funnel-report"
+                ],
+                "component_ids": [
+                    "7378866381217516857"
+                ]
+            },
+            {
+                "id": "sjanqk6u5mbfpqt8qbc5",
+                "name": "Share Email Reach",
+                "description": "Unique people opening a share email",
+                "expression": "people_count(share_viewed)",
+                "unit": "#",
+                "tags": [
+                    "people-funnel-report"
+                ],
+                "component_ids": [
+                    "7378866381217516857"
+                ]
+            },
+            {
+                "id": "sjanqk6p8pxsgqcsxb83",
+                "name": "Highest Quality Email Opens",
+                "description": "Number of views of share emails that are highest quality",
+                "expression": "event_count(share_viewed, quality:high)",
+                "unit": "#",
+                "tags": [
+                    "event-funnel-report"
+                ],
+                "component_ids": [
+                    "7378866381217516857"
+                ]
+            }
+        ],
+        "apps": [],
+        "tags": [
+            "component-filter:type:email"
+        ],
+        "name": "Viewed",
+        "icon_color": "secondary",
+        "description": "The friend has viewed the advocate's share email, SMS, or social post",
+        "words": {
+            "singular_noun_name": "handlebars@buildtime:{{name}} Event",
+            "plural_noun_name": "handlebars@buildtime:{{name}} Events",
+            "verb_name": "handlebars@buildtime:{{name}}",
+            "rate_name": "handlebars@buildtime:{{name}} Event Rate",
+            "person_counting_name": "handlebars@buildtime:Unique {{name}} Events"
+        },
+        "component_ids": [
+            "7378866381217516857"
+        ]
+    },
+    {
+        "flow_step_id": "7410806967280594489",
+        "flow_path": "/business-events",
+        "sequence": 10,
+        "step_name": "converted",
+        "icon_type": "shopping-cart",
+        "metrics": [
+            {
+                "id": "sjanqk5ps4pxmp2o7a3l",
+                "name": "Conversions",
+                "description": "Number of conversions",
+                "expression": "event_count(converted, visit_type:new_to_program)",
+                "unit": "#",
+                "tags": [
+                    "event-funnel-report",
+                    "client-outcome-graph:conversions/default:no-breakdown/default",
+                    "channel-report",
+                    "dashboard-graph",
+                    "promotion-report"
+                ],
+                "component_ids": [
+                    "7378866381217516857"
+                ]
+            },
+            {
+                "id": "sjanqk1qffcfqrvxrg6q",
+                "name": "Converters",
+                "description": "Unique customers",
+                "expression": "people_count(converted, visit_type:new_to_program)",
+                "unit": "#",
+                "tags": [
+                    "people-funnel-report"
+                ],
+                "component_ids": [
+                    "7378866381217516857"
+                ]
+            },
+            {
+                "id": "sjanqk6kg2ec9xtpim3f",
+                "name": "Conversion Rate",
+                "description": "(Conversions/Share clicks) * 100. Conversion Rate is the ratio of conversions to clicks on share links.",
+                "expression": "percentage(event_count(converted, visit_type:new_to_program), event_count(share_click))",
+                "unit": "%",
+                "tags": [
+                    "event-funnel-report",
+                    "channel-report",
+                    "dashboard-rate"
+                ],
+                "component_ids": [
+                    "7378866381217516857"
+                ]
+            },
+            {
+                "id": "sjanqk1zfcf621eq0ixd",
+                "name": "Unique Conversion Rate",
+                "description": "(Converters/Unique share clicks) * 100. Unique Conversion Rate is the ratio of unique customers to unique people clicking on a share.",
+                "expression": "percentage(people_count(converted, visit_type:new_to_program), people_count(share_click))",
+                "unit": "%",
+                "tags": [
+                    "people-funnel-report"
+                ],
+                "component_ids": [
+                    "7378866381217516857"
+                ]
+            },
+            {
+                "id": "sjanqk50ijjjicicmxg7",
+                "name": "Highest Quality Conversions",
+                "description": "Number of highest quality conversions",
+                "expression": "event_count(converted, quality:high,  visit_type:new_to_program)",
+                "unit": "#",
+                "tags": [
+                    "dashboard-graph:quality-view",
+                    "event-funnel-report",
+                    "client-outcome-graph:conversions/default:highest-quality-breakdown"
+                ],
+                "component_ids": [
+                    "7378866381217516857"
+                ]
+            },
+            {
+                "id": "sjanqk2uyrhaqb9n1bwc",
+                "name": "Friend Conversion Reward Rate",
+                "description": "(Rewarded conversions/Conversions) * 100. Conversion Reward Rate is the ratio of conversions that have resulted in an advocate reward to total conversions.",
+                "expression": "percentage(event_count(converted_advocate_reward_earned), event_count(converted, visit_type:new_to_program))",
+                "unit": "%",
+                "tags": [
+                    "event-funnel-report",
+                    "dashboard-rate:rewarded-view"
+                ],
+                "component_ids": [
+                    "7378866381217516857"
+                ]
+            },
+            {
+                "id": "sjanqk22bulbcic5whrk",
+                "name": "Value of Rewarded Conversions",
+                "description": "Sum of revenue from all conversions that have resulted in an advocate reward",
+                "expression": "value(converted_advocate_reward_earned)",
+                "unit": "$",
+                "tags": [
+                    "event-funnel-report",
+                    "dashboard-graph:rewarded-view"
+                ],
+                "component_ids": [
+                    "7378866381217516857"
+                ]
+            },
+            {
+                "id": "sjanqk6e59atoss913rf",
+                "name": "Conversion Revenue",
+                "description": "Sum of revenue from conversions",
+                "expression": "value(converted, visit_type:new_to_program)",
+                "unit": "$",
+                "tags": [
+                    "client-programs-list-transaction-revenue",
+                    "dashboard-graph/default",
+                    "event-funnel-report",
+                    "promotion-report",
+                    "client-outcome-graph-revenue:conversions/default:no-breakdown/default"
+                ],
+                "component_ids": [
+                    "7378866381217516857"
+                ]
+            },
+            {
+                "id": "sjanqk6h8pmbobw0lzdk",
+                "name": "New to File Conversion Revenue",
+                "description": "Sum of revenue from all conversions that are new to your customer list",
+                "expression": "value(converted, visit_type:new_to_client)",
+                "unit": "$",
+                "tags": [
+                    "event-funnel-report",
+                    "client-outcome-graph-revenue:conversions/default:new-to-file-breakdown"
+                ],
+                "component_ids": [
+                    "7378866381217516857"
+                ]
+            },
+            {
+                "id": "sjanqk2cdfosc7epybtt",
+                "name": "Friend Rewarded Friend Revenue",
+                "description": "Sum of revenue from all events that resulted in a friend reward",
+                "expression": "value(friend_reward_earned)",
+                "unit": "$",
+                "tags": [
+                    "event-funnel-report"
+                ],
+                "component_ids": [
+                    "7378866381217516857"
+                ]
+            },
+            {
+                "id": "sjanqk37t6k3rysdj2yu",
+                "name": "Friend Redeemed Reward Revenue",
+                "description": "Sum of revenue from all events that used a friend reward",
+                "expression": "value(friend_reward_redeemed)",
+                "unit": "$",
+                "tags": [
+                    "event-funnel-report"
+                ],
+                "component_ids": [
+                    "7378866381217516857"
+                ]
+            },
+            {
+                "id": "sjanqk416jhp990yc4ll",
+                "name": "Highest Quality Friend Revenue",
+                "description": "Sum of revenue from all highest quality conversions",
+                "expression": "value(converted, quality:high, visit_type:new_to_program)",
+                "unit": "$",
+                "tags": [
+                    "event-funnel-report",
+                    "client-outcome-graph-revenue:conversions/default:highest-quality-breakdown"
+                ],
+                "component_ids": [
+                    "7378866381217516857"
+                ]
+            },
+            {
+                "id": "sjanqkwya2e46961r5s",
+                "name": "New to File Friend Conversions",
+                "description": "Number of conversions that are new to your customer list",
+                "expression": "event_count(converted, visit_type:new_to_client)",
+                "unit": "#",
+                "tags": [
+                    "event-funnel-report",
+                    "client-outcome-graph:conversions/default:new-to-file-breakdown",
+                    "dashboard-graph:visit-type-view"
+                ],
+                "component_ids": [
+                    "7378866381217516857"
+                ]
+            },
+            {
+                "id": "sjanqk4drpptbko6c338",
+                "name": "Rewarded Friend Conversions",
+                "description": "Number of friend conversions that have resulted in an advocate reward",
+                "expression": "event_count(converted_advocate_reward_earned)",
+                "unit": "#",
+                "tags": [
+                    "event-funnel-report",
+                    "dashboard-graph:rewarded-view"
+                ],
+                "component_ids": [
+                    "7378866381217516857"
+                ]
+            },
+            {
+                "id": "sjanqk3551k1zqngnr3w",
+                "name": "Highest Quality Friend Conversion Rate",
+                "description": "(Highest quality friend conversions/Highest quality share clicks) * 100. Highest Quality Friend Conversion Rate is the ratio of friend conversions that are highest quality to clicks on share links that are highest quality.",
+                "expression": "percentage(event_count(converted, quality:high, visit_type:new_to_program), event_count(share_click, quality:high))",
+                "unit": "%",
+                "tags": [
+                    "event-funnel-report"
+                ],
+                "component_ids": [
+                    "7378866381217516857"
+                ]
+            },
+            {
+                "id": "sjanqk2v6oysgen4bjcp",
+                "name": "New to File Friend Conversion Rate",
+                "description": "(New to file friend conversions/Share clicks) * 100. New to File Friend Conversion Rate is the ratio of friend conversions that are new to file to clicks on share links.",
+                "expression": "percentage(event_count(converted, visit_type:new_to_client), event_count(share_click))",
+                "unit": "%",
+                "tags": [
+                    "event-funnel-report",
+                    "dashboard-rate:visit-type-view"
+                ],
+                "component_ids": [
+                    "7378866381217516857"
+                ]
+            }
+        ],
+        "apps": [],
+        "tags": [
+            "component-filter:type:email"
+        ],
+        "name": "Friend Converted",
+        "icon_color": "secondary",
+        "description": "The friend has made a qualified purchase as a result of the referral",
+        "words": {
+            "singular_noun_name": "handlebars@buildtime:{{name}} Event",
+            "plural_noun_name": "handlebars@buildtime:{{name}} Events",
+            "verb_name": "handlebars@buildtime:{{name}}",
+            "rate_name": "handlebars@buildtime:{{name}} Event Rate",
+            "person_counting_name": "handlebars@buildtime:Unique {{name}} Events"
+        },
+        "component_ids": [
+            "7378866381217516857"
+        ]
+    },
+    {
+        "flow_step_id": "7410806969628836986",
+        "flow_path": "/business-events",
+        "sequence": 11,
+        "step_name": "advocate_reward_earned",
+        "icon_type": "money-check-alt",
+        "metrics": [
+            {
+                "id": "sjanqk1ov4fef2pqh24e",
+                "name": "Advocate Rewards",
+                "description": "Number of rewards issued to advocates",
+                "expression": "event_count(advocate_reward_earned)",
+                "unit": "#",
+                "tags": [
+                    "event-funnel-report",
+                    "advocate-redeemed-rewards-report"
+                ],
+                "component_ids": [
+                    "7378866381217516857"
+                ]
+            },
+            {
+                "id": "sjanqk5t4ljcdd73fhrc",
+                "name": "Advocates Rewarded",
+                "description": "Unique people receiving an advocate reward",
+                "expression": "people_count(advocate_reward_earned)",
+                "unit": "#",
+                "tags": [
+                    "people-funnel-report"
+                ],
+                "component_ids": [
+                    "7378866381217516857"
+                ]
+            },
+            {
+                "id": "sjanqk42dzv79m6dx5hs",
+                "name": "Advocate Rewarded Friend Revenue",
+                "description": "Sum of revenue from all events that resulted in an advocate reward",
+                "expression": "value(advocate_reward_earned)",
+                "unit": "$",
+                "tags": [
+                    "event-funnel-report",
+                    "advocate-redeemed-rewards-report"
+                ],
+                "component_ids": [
+                    "7378866381217516857"
+                ]
+            },
+            {
+                "id": "sjanqk4srh4m6nul4ok4",
+                "name": "Advocate Redeemed Reward Revenue",
+                "description": "Sum of revenue from all events that used an advocate reward",
+                "expression": "value(advocate_reward_redeemed)",
+                "unit": "$",
+                "tags": [
+                    "event-funnel-report",
+                    "dashboard-graph",
+                    "advocate-redeemed-rewards-report"
+                ],
+                "component_ids": [
+                    "7378866381217516857"
+                ]
+            },
+            {
+                "id": "sjanqk1j2o7rp8xrwgpm",
+                "name": "Advocate Redeemed Rewards",
+                "description": "Number of rewards redeemed by advocates",
+                "expression": "event_count(advocate_reward_redeemed)",
+                "unit": "$",
+                "tags": [
+                    "event-funnel-report",
+                    "advocate-redeemed-rewards-report"
+                ],
+                "component_ids": [
+                    "7378866381217516857"
+                ]
+            },
+            {
+                "id": "sjanqk1g0ax5niqse7s7",
+                "name": "Advocate Reward Redemption Rate",
+                "description": "(Redeemed advocate rewards/Advocate rewards) * 100. Advocate Reward Redemption Rate is the ratio of rewards redeemed by advocates to rewards issued to advocates.",
+                "expression": "percentage(event_count(advocate_reward_redeemed), event_count(advocate_reward_earned))",
+                "unit": "$",
+                "tags": [
+                    "event-funnel-report",
+                    "advocate-redeemed-rewards-report"
+                ],
+                "component_ids": [
+                    "7378866381217516857"
+                ]
+            }
+        ],
+        "apps": [],
+        "tags": [],
+        "name": "Advocate Rewarded",
+        "icon_color": "primary",
+        "description": "The advocate has received the earned reward email or SMS notification with their reward",
+        "words": {
+            "singular_noun_name": "handlebars@buildtime:{{name}} Event",
+            "plural_noun_name": "handlebars@buildtime:{{name}} Events",
+            "verb_name": "handlebars@buildtime:{{name}}",
+            "rate_name": "handlebars@buildtime:{{name}} Event Rate",
+            "person_counting_name": "handlebars@buildtime:Unique {{name}} Events"
+        },
+        "component_ids": [
+            "7378866381217516857"
+        ]
+    },
+    {
+        "flow_step_id": "7410807062810001431",
+        "flow_path": "/business-events",
+        "sequence": 1,
+        "step_name": "promotion_viewed",
+        "icon_type": "phone-laptop",
+        "metrics": [
+            {
+                "id": "sjanr62zz9bg5nlddh3p",
+                "name": "Impressions",
+                "description": "Number of impressions on in-app or onsite promotions or Extole-sent emails that have been opened (does not include links posted on social channels or untracked sources)",
+                "expression": "event_count(promotion_viewed)",
+                "unit": "#",
+                "tags": [
+                    "event-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807064119532355"
+                ]
+            },
+            {
+                "id": "sjanr63wzh76llyhy9q2",
+                "name": "Reach",
+                "description": "Unique people viewing in-app or onsite promotions or emails (does not include links posted on social channels or untracked sources)",
+                "expression": "people_count(promotion_viewed)",
+                "unit": "#",
+                "tags": [
+                    "people-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807064119532355"
+                ]
+            }
+        ],
+        "apps": [],
+        "tags": [
+            "component-filter:promotion-type:email",
+            "component-filter:promotion-type:onsite"
+        ],
+        "name": "Promotion Viewed",
+        "icon_color": "primary",
+        "description": null,
+        "words": {
+            "singular_noun_name": "handlebars@buildtime:{{name}} Event",
+            "plural_noun_name": "handlebars@buildtime:{{name}} Events",
+            "verb_name": "handlebars@buildtime:{{name}}",
+            "rate_name": "handlebars@buildtime:{{name}} Event Rate",
+            "person_counting_name": "handlebars@buildtime:Unique {{name}} Events"
+        },
+        "component_ids": [
+            "7410807064119532355"
+        ]
+    },
+    {
+        "flow_step_id": "7410807061499133096",
+        "flow_path": "/business-events",
+        "sequence": 2,
+        "step_name": "promotion_clicked",
+        "icon_type": "hand-point-up",
+        "metrics": [
+            {
+                "id": "sjanr663gtryeyd1ut2k",
+                "name": "Promotion Click-Throughs",
+                "description": "Number of clicks on in-app promotions, onsite promotions, email promotions, or promotion links posted on social channels",
+                "expression": "event_count(promotion_clicked)",
+                "unit": "#",
+                "tags": [
+                    "event-funnel-report",
+                    "dashboard-graph"
+                ],
+                "component_ids": [
+                    "7410807061547111982"
+                ]
+            },
+            {
+                "id": "sjanr66ckywbx2l4vvsy",
+                "name": "Unique Promotion Clicks",
+                "description": "Unique people clicking on in-app promotions, onsite promotions, email promotions, or promotion links posted on social channels",
+                "expression": "people_count(promotion_clicked)",
+                "unit": "#",
+                "tags": [
+                    "people-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807061547111982"
+                ]
+            },
+            {
+                "id": "sjanr61ppeg259v8793m",
+                "name": "Promotion Click-Through Rate",
+                "description": "(Promotion clicks/Impressions) * 100. Promotion Click-Through Rate is the ratio of clicks on promotions to impressions on promotions (impressions do not include links posted on social channels or untracked sources).",
+                "expression": "percentage(event_count(promotion_clicked), event_count(promotion_viewed))",
+                "unit": "%",
+                "tags": [
+                    "promotion-metric:revenue",
+                    "event-funnel-report",
+                    "promotion-metric:shares",
+                    "dashboard-rate"
+                ],
+                "component_ids": [
+                    "7410807061547111982"
+                ]
+            },
+            {
+                "id": "sjanr66ctdjh36pmy3d",
+                "name": "Unique Promotion Click-Through Rate",
+                "description": "(Unique promotion clicks/Reach) * 100. Unique Promotion Click-Through Rate is the ratio of unique people clicking on promotions to unique people viewing promotions (reach does not include links posted on social channels or untracked sources).",
+                "expression": "percentage(people_count(promotion_clicked), people_count(promotion_viewed))",
+                "unit": "%",
+                "tags": [
+                    "people-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807061547111982"
+                ]
+            }
+        ],
+        "apps": [],
+        "tags": [],
+        "name": "Promotion Clicked",
+        "icon_color": "primary",
+        "description": null,
+        "words": {
+            "singular_noun_name": "handlebars@buildtime:{{name}} Event",
+            "plural_noun_name": "handlebars@buildtime:{{name}} Events",
+            "verb_name": "handlebars@buildtime:{{name}}",
+            "rate_name": "handlebars@buildtime:{{name}} Event Rate",
+            "person_counting_name": "handlebars@buildtime:Unique {{name}} Events"
+        },
+        "component_ids": [
+            "7410807061547111982"
+        ]
+    },
+    {
+        "flow_step_id": "7410807141623365549",
+        "flow_path": "/business-events",
+        "sequence": 6,
+        "step_name": "share_click",
+        "icon_type": "hand-point-up",
+        "metrics": [
+            {
+                "id": "sjanro2u35avc88lvc2s",
+                "name": "Share Clicks",
+                "description": "Number of clicks on share links",
+                "expression": "event_count(share_click)",
+                "unit": "#",
+                "tags": [
+                    "event-funnel-report",
+                    "dashboard-graph"
+                ],
+                "component_ids": [
+                    "7410807141813390812"
+                ]
+            },
+            {
+                "id": "sjanro58najs5175j3s7",
+                "name": "Unique Share Clicks",
+                "description": "Unique people clicking on a share",
+                "expression": "people_count(share_click)",
+                "unit": "#",
+                "tags": [
+                    "people-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807141813390812"
+                ]
+            },
+            {
+                "id": "sjanroyn634mmcyqm0v",
+                "name": "Share Click-Through Rate",
+                "description": "(Share clicks/Shares) * 100. Share Click-Through Rate is the ratio of clicks on share links to shares.",
+                "expression": "rate(event_count(share_click), event_count(shared))",
+                "unit": "X",
+                "tags": [
+                    "channel-rate",
+                    "event-funnel-report",
+                    "dashboard-rate"
+                ],
+                "component_ids": [
+                    "7410807141813390812"
+                ]
+            },
+            {
+                "id": "sjanro3xqbzk02gmp5bv",
+                "name": "Unique Share Click-Through Rate",
+                "description": "(Unique share clicks/Advocates) * 100. Unique Share Click-Through Rate is the ratio of unique people clicking on a share to unique advocates.",
+                "expression": "rate(people_count(share_click), people_count(shared))",
+                "unit": "X",
+                "tags": [
+                    "people-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807141813390812"
+                ]
+            },
+            {
+                "id": "sjanrorx41sacf44v4j",
+                "name": "Highest Quality Share Clicks",
+                "description": "Number of clicks on share links that are highest quality",
+                "expression": "event_count(share_click, quality:high) ",
+                "unit": "#",
+                "tags": [
+                    "dashboard-graph:quality-view",
+                    "event-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807141813390812"
+                ]
+            },
+            {
+                "id": "sjanro20caeknwzjcjkb",
+                "name": "Rewarded Share Clicks",
+                "description": "Number of clicks on share links that have resulted in a friend reward",
+                "expression": "event_count(share_clicked_friend_reward_earned)",
+                "unit": "#",
+                "tags": [
+                    "event-funnel-report",
+                    "dashboard-graph:rewarded-view"
+                ],
+                "component_ids": [
+                    "7410807141813390812"
+                ]
+            },
+            {
+                "id": "sjanro3mfkdl1kifj0o1",
+                "name": "Highest Quality Share-Through Rate",
+                "description": "(Highest quality share clicks/Highest quality shares) * 100. Highest Quality Share-Through Rate is the ratio of highest quality clicks on share links to highest quality shares.",
+                "expression": "percentage(event_count(share_click, quality:high), event_count(shared, quality:high))",
+                "unit": "%",
+                "tags": [
+                    "event-funnel-report",
+                    "dashboard-rate:quality-view"
+                ],
+                "component_ids": [
+                    "7410807141813390812"
+                ]
+            },
+            {
+                "id": "sjanro35moiz0u21flxz",
+                "name": "Share Click Reward Rate",
+                "description": "(Rewarded share clicks/Share clicks) * 100. Share Click Reward Rate is the ratio clicks on share links that have resulted in a friend reward to total clicks on share links.",
+                "expression": "percentage(event_count(share_clicked_friend_reward_earned), event_count(share_click))",
+                "unit": "%",
+                "tags": [
+                    "event-funnel-report",
+                    "dashboard-rate:rewarded-view"
+                ],
+                "component_ids": [
+                    "7410807141813390812"
+                ]
+            }
+        ],
+        "apps": [],
+        "tags": [
+            "component-filter:type:email"
+        ],
+        "name": "Clicked",
+        "icon_color": "secondary",
+        "description": "The friend has clicked on the share link",
+        "words": {
+            "singular_noun_name": "handlebars@buildtime:{{name}} Event",
+            "plural_noun_name": "handlebars@buildtime:{{name}} Events",
+            "verb_name": "handlebars@buildtime:{{name}}",
+            "rate_name": "handlebars@buildtime:{{name}} Event Rate",
+            "person_counting_name": "handlebars@buildtime:Unique {{name}} Events"
+        },
+        "component_ids": [
+            "7410807141813390812"
+        ]
+    },
+    {
+        "flow_step_id": "7410807138667769458",
+        "flow_path": "/business-events",
+        "sequence": 7,
+        "step_name": "friend_viewed",
+        "icon_type": "phone-laptop",
+        "metrics": [
+            {
+                "id": "sjanrozdf64adc2r6fw",
+                "name": "Friend Visits",
+                "description": "Number of visits to a share destination",
+                "expression": "event_count(friend_viewed)",
+                "unit": "#",
+                "tags": [
+                    "event-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807141813390812"
+                ]
+            },
+            {
+                "id": "sjanro1hfhjn8ml0sajy",
+                "name": "Friend Visitors",
+                "description": "Unique people loading the friend landing experience",
+                "expression": "people_count(friend_viewed)",
+                "unit": "#",
+                "tags": [
+                    "people-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807141813390812"
+                ]
+            }
+        ],
+        "apps": [],
+        "tags": [
+            "component-filter:type:email"
+        ],
+        "name": "Visited",
+        "icon_color": "secondary",
+        "description": "The friend has arrived on the onsite or in-app landing experience",
+        "words": {
+            "singular_noun_name": "handlebars@buildtime:{{name}} Event",
+            "plural_noun_name": "handlebars@buildtime:{{name}} Events",
+            "verb_name": "handlebars@buildtime:{{name}}",
+            "rate_name": "handlebars@buildtime:{{name}} Event Rate",
+            "person_counting_name": "handlebars@buildtime:Unique {{name}} Events"
+        },
+        "component_ids": [
+            "7410807141813390812"
+        ]
+    },
+    {
+        "flow_step_id": "7410807140050632328",
+        "flow_path": "/business-events",
+        "sequence": 8,
+        "step_name": "signed_up",
+        "icon_type": "ballot",
+        "metrics": [
+            {
+                "id": "sjanrobhqfp26f21m54",
+                "name": "Signups",
+                "description": "Number of signups",
+                "expression": "event_count(register, visit_type:new_to_program)",
+                "unit": "#",
+                "tags": [
+                    "event-funnel-report",
+                    "client-outcome-graph:signups:no-breakdown/default",
+                    "dashboard-graph"
+                ],
+                "component_ids": [
+                    "7410807141813390812"
+                ]
+            },
+            {
+                "id": "sjanro19cn4x15uc12j3",
+                "name": "Unique Signups",
+                "description": "Unique people signing up",
+                "expression": "people_count(register, visit_type:new_to_program)",
+                "unit": "#",
+                "tags": [
+                    "people-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807141813390812"
+                ]
+            },
+            {
+                "id": "sjanro5hb98inwuyi9gv",
+                "name": "Signup Rate",
+                "description": "(Signups/Share clicks) * 100. Signup Rate is the ratio of signups to clicks on share links.",
+                "expression": "percentage(event_count(register, visit_type:new_to_program), event_count(share_click))",
+                "unit": "%",
+                "tags": [
+                    "event-funnel-report",
+                    "dashboard-rate"
+                ],
+                "component_ids": [
+                    "7410807141813390812"
+                ]
+            },
+            {
+                "id": "sjanro49b7m351z5hs0n",
+                "name": "Unique Signup Rate",
+                "description": "(Unique signups/Unique share clicks) * 100. Unique Signup Rate is the ratio of unique people signup up to unique people clicking on a share.",
+                "expression": "percentage(people_count(register, visit_type:new_to_program), people_count(share_click))",
+                "unit": "%",
+                "tags": [
+                    "people-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807141813390812"
+                ]
+            },
+            {
+                "id": "sjanro4kpyulfb23g7xo",
+                "name": "Highest Quality Signups",
+                "description": "Number of highest quality signups",
+                "expression": "event_count(register, quality:high, visit_type:new_to_program)",
+                "unit": "#",
+                "tags": [
+                    "dashboard-graph:quality-view",
+                    "event-funnel-report",
+                    "client-outcome-graph:signups:highest-quality-breakdown"
+                ],
+                "component_ids": [
+                    "7410807141813390812"
+                ]
+            },
+            {
+                "id": "sjanro6aguyla6j6q06b",
+                "name": "New to File Signups",
+                "description": "Number of signups that are new to your customer list",
+                "expression": "event_count(register, visit_type:new_to_client)",
+                "unit": "#",
+                "tags": [
+                    "event-funnel-report",
+                    "client-outcome-graph:signups:new-to-file-breakdown",
+                    "dashboard-graph:visit-type-view"
+                ],
+                "component_ids": [
+                    "7410807141813390812"
+                ]
+            },
+            {
+                "id": "sjanro3xnpksy4w721zq",
+                "name": "Rewarded Signups",
+                "description": "Number of signups that have resulted in a friend reward",
+                "expression": "event_count(signed_up_friend_reward_earned)",
+                "unit": "#",
+                "tags": [
+                    "event-funnel-report",
+                    "dashboard-graph:rewarded-view"
+                ],
+                "component_ids": [
+                    "7410807141813390812"
+                ]
+            },
+            {
+                "id": "sjanro45g6uuirqh4rk",
+                "name": "Highest Quality Signup Rate",
+                "description": "(Highest quality signups/Highest quality share clicks) * 100. Highest Quality Signup Rate is the ratio of highest quality signups to highest quality clicks on share links.",
+                "expression": "percentage(event_count(register, quality:high, visit_type:new_to_program), event_count(share_click, quality:high))",
+                "unit": "%",
+                "tags": [
+                    "event-funnel-report",
+                    "dashboard-rate:quality-view"
+                ],
+                "component_ids": [
+                    "7410807141813390812"
+                ]
+            },
+            {
+                "id": "sjanroh4qcatsewfbdn",
+                "name": "New to File Signup Rate",
+                "description": "(New to file signups/Share clicks) * 100. New to File Signup Rate is the ratio of new to file signups to clicks on share links.",
+                "expression": "percentage(event_count(register, visit_type:new_to_client), event_count(share_click))",
+                "unit": "%",
+                "tags": [
+                    "event-funnel-report",
+                    "dashboard-rate:visit-type-view"
+                ],
+                "component_ids": [
+                    "7410807141813390812"
+                ]
+            },
+            {
+                "id": "sjanro51iwgzybjm8quz",
+                "name": "Signup Reward Rate",
+                "description": "(Rewarded signups/Signups) * 100. Signup Reward Rate is the ratio of signups that have resulted in a friend reward to total signups.",
+                "expression": "percentage(event_count(registered_friend_reward_earned), event_count(register, visit_type:new_to_program))",
+                "unit": "%",
+                "tags": [
+                    "event-funnel-report",
+                    "dashboard-rate:rewarded-view"
+                ],
+                "component_ids": [
+                    "7410807141813390812"
+                ]
+            },
+            {
+                "id": "sjanro4cvb9569mqcopp",
+                "name": "Advocate Rewarded Signups",
+                "description": "Number of signups that have resulted in an advocate reward",
+                "expression": "event_count(signed_up_advocate_reward_earned)",
+                "unit": "#",
+                "tags": [
+                    "event-funnel-report",
+                    "dashboard-graph:rewarded-view"
+                ],
+                "component_ids": [
+                    "7410807141813390812"
+                ]
+            },
+            {
+                "id": "sjanrodoqa9l9mgkn4u",
+                "name": "Advocate Signup Reward Rate",
+                "description": "(Advocate rewarded signups/Signups) * 100. Advocate Signup Reward Rate is the ratio of signups that have resulted in an advocate reward to total signups.",
+                "expression": "percentage(event_count(signed_up_advocate_reward_earned), event_count(register, visit_type:new_to_program))",
+                "unit": "%",
+                "tags": [
+                    "event-funnel-report",
+                    "dashboard-rate:rewarded-view"
+                ],
+                "component_ids": [
+                    "7410807141813390812"
+                ]
+            }
+        ],
+        "apps": [],
+        "tags": [
+            "component-filter:type:email"
+        ],
+        "name": "Signed Up",
+        "icon_color": "secondary",
+        "description": "The friend has entered their email address on the landing experience",
+        "words": {
+            "singular_noun_name": "handlebars@buildtime:{{name}} Event",
+            "plural_noun_name": "handlebars@buildtime:{{name}} Events",
+            "verb_name": "handlebars@buildtime:{{name}}",
+            "rate_name": "handlebars@buildtime:{{name}} Event Rate",
+            "person_counting_name": "handlebars@buildtime:Unique {{name}} Events"
+        },
+        "component_ids": [
+            "7410807141813390812"
+        ]
+    },
+    {
+        "flow_step_id": "7410807139620216364",
+        "flow_path": "/business-events",
+        "sequence": 9,
+        "step_name": "friend_reward_earned",
+        "icon_type": "money-check-alt",
+        "metrics": [
+            {
+                "id": "sjanro2j0yvf93icg7r6",
+                "name": "Friend Rewards",
+                "description": "Number of rewards issued to friends",
+                "expression": "event_count(friend_reward_earned)",
+                "unit": "#",
+                "tags": [
+                    "event-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807141813390812"
+                ]
+            },
+            {
+                "id": "sjanro5wi80ftx88i9e9",
+                "name": "Friends Rewarded",
+                "description": "Unique people receiving a friend reward",
+                "expression": "people_count(friend_reward_earned)",
+                "unit": "#",
+                "tags": [
+                    "people-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807141813390812"
+                ]
+            }
+        ],
+        "apps": [],
+        "tags": [
+            "component-filter:type:email"
+        ],
+        "name": "Friend Rewarded",
+        "icon_color": "secondary",
+        "description": "The friend has received the earned reward email or SMS notification with their reward",
+        "words": {
+            "singular_noun_name": "handlebars@buildtime:{{name}} Event",
+            "plural_noun_name": "handlebars@buildtime:{{name}} Events",
+            "verb_name": "handlebars@buildtime:{{name}}",
+            "rate_name": "handlebars@buildtime:{{name}} Event Rate",
+            "person_counting_name": "handlebars@buildtime:Unique {{name}} Events"
+        },
+        "component_ids": [
+            "7410807141813390812"
+        ]
+    },
+    {
+        "flow_step_id": "7410807189572035699",
+        "flow_path": "spel@buildtime:'/emails/' + context.getVariableContext().get('component.name')",
+        "sequence": 1,
+        "step_name": "spel@buildtime:context.getVariableContext().get('component.name') + '_triggered'",
+        "icon_type": "envelope",
+        "metrics": [
+            {
+                "id": "sjanrz13ldhhoetn0e2g",
+                "name": "spel@buildtime:context.getVariableContext().get('component.displayName') + ' Triggers'",
+                "description": "spel@buildtime:'Number of times the ' + context.getVariableContext().get('component.displayName') + ' was triggered'",
+                "expression": "spel@buildtime:'event_count(' + context.getVariableContext().get('component.name') + '_triggered)'",
+                "unit": "#",
+                "tags": [
+                    "event-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807186200553454"
+                ]
+            },
+            {
+                "id": "sjanrz2a0vfr7apsicuq",
+                "name": "spel@buildtime:'Unique ' + context.getVariableContext().get('component.displayName') + ' Triggers'",
+                "description": "spel@buildtime:'Unique people to whom a ' + context.getVariableContext().get('component.displayName') + ' was triggered'",
+                "expression": "spel@buildtime:'people_count(' + context.getVariableContext().get('component.name') + '_triggered)'",
+                "unit": "#",
+                "tags": [
+                    "people-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807186200553454"
+                ]
+            }
+        ],
+        "apps": [],
+        "tags": [],
+        "name": "spel@buildtime:context.getVariableContext().get('component.displayName') + ' Triggered'",
+        "icon_color": "spel@buildtime:context.getVariableContext().get('journeyNames').contains('ADVOCATE') ? 'primary' : 'secondary'",
+        "description": null,
+        "words": {
+            "singular_noun_name": "handlebars@buildtime:{{name}} Event",
+            "plural_noun_name": "handlebars@buildtime:{{name}} Events",
+            "verb_name": "handlebars@buildtime:{{name}}",
+            "rate_name": "handlebars@buildtime:{{name}} Event Rate",
+            "person_counting_name": "handlebars@buildtime:Unique {{name}} Events"
+        },
+        "component_ids": [
+            "7410807186200553454"
+        ]
+    },
+    {
+        "flow_step_id": "7410807187677606763",
+        "flow_path": "spel@buildtime:'/emails/' + context.getVariableContext().get('component.name')",
+        "sequence": 2,
+        "step_name": "spel@buildtime:context.getVariableContext().get('component.name') + '_delivered'",
+        "icon_type": "envelope",
+        "metrics": [
+            {
+                "id": "sjanrz4ufmsdnigab6w8",
+                "name": "spel@buildtime:context.getVariableContext().get('component.displayName') + ' Deliveries'",
+                "description": "spel@buildtime:'Number of times the ' + context.getVariableContext().get('component.displayName') + ' was delivered'",
+                "expression": "spel@buildtime:'event_count(' + context.getVariableContext().get('component.name') + '_delivered)'",
+                "unit": "#",
+                "tags": [
+                    "event-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807186200553454"
+                ]
+            },
+            {
+                "id": "sjanrz2yt1uyuns5kq0m",
+                "name": "spel@buildtime:'Unique ' + context.getVariableContext().get('component.displayName') + ' Deliveries'",
+                "description": "spel@buildtime:'Unique people to whom a ' + context.getVariableContext().get('component.displayName') + ' was delivered'",
+                "expression": "spel@buildtime:'people_count(' + context.getVariableContext().get('component.name') + '_delivered)'",
+                "unit": "#",
+                "tags": [
+                    "people-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807186200553454"
+                ]
+            },
+            {
+                "id": "sjanrz2wmxuuteefa5tq",
+                "name": "spel@buildtime:context.getVariableContext().get('component.displayName') + ' Delivery Rate'",
+                "description": "spel@buildtime:'(' + context.getVariableContext().get('component.displayName') + ' Delivered /' + context.getVariableContext().get('component.displayName') + ' Triggered) * 100. ' + context.getVariableContext().get('component.displayName') + ' Delivery Rate is the ratio of deliveries of ' + context.getVariableContext().get('component.displayName') + 's to triggers of ' + context.getVariableContext().get('component.displayName') + 's.'",
+                "expression": "spel@buildtime:'percentage(event_count(' + context.getVariableContext().get('component.name') + '_delivered), event_count(' + context.getVariableContext().get('component.name') + '_triggered))'",
+                "unit": "%",
+                "tags": [
+                    "event-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807186200553454"
+                ]
+            },
+            {
+                "id": "sjanrz5xus1einu0nmyi",
+                "name": "spel@buildtime:'Unique ' + context.getVariableContext().get('component.displayName') + ' Delivery Rate'",
+                "description": "spel@buildtime:'(Unique ' + context.getVariableContext().get('component.displayName') + ' deliveries/Unique ' + context.getVariableContext().get('component.displayName') + ' triggers) * 100. Unique ' + context.getVariableContext().get('component.displayName') + ' Delivery Rate is the ratio of unique people to whom a ' + context.getVariableContext().get('component.displayName') + ' was delivered to unique people to whom a ' + context.getVariableContext().get('component.displayName') + ' was triggered.'",
+                "expression": "spel@buildtime:'percentage(people_count(' + context.getVariableContext().get('component.name') + '_delivered), people_count(' + context.getVariableContext().get('component.name') + '_triggered))'",
+                "unit": "%",
+                "tags": [
+                    "people-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807186200553454"
+                ]
+            }
+        ],
+        "apps": [],
+        "tags": [],
+        "name": "spel@buildtime:context.getVariableContext().get('component.displayName') + ' Delivered'",
+        "icon_color": "spel@buildtime:context.getVariableContext().get('journeyNames').contains('ADVOCATE') ? 'primary' : 'secondary'",
+        "description": null,
+        "words": {
+            "singular_noun_name": "handlebars@buildtime:{{name}} Event",
+            "plural_noun_name": "handlebars@buildtime:{{name}} Events",
+            "verb_name": "handlebars@buildtime:{{name}}",
+            "rate_name": "handlebars@buildtime:{{name}} Event Rate",
+            "person_counting_name": "handlebars@buildtime:Unique {{name}} Events"
+        },
+        "component_ids": [
+            "7410807186200553454"
+        ]
+    },
+    {
+        "flow_step_id": "7410807186703608336",
+        "flow_path": "spel@buildtime:'/emails/' + context.getVariableContext().get('component.name')",
+        "sequence": 3,
+        "step_name": "spel@buildtime:context.getVariableContext().get('component.name') + '_opened'",
+        "icon_type": "envelope-open",
+        "metrics": [
+            {
+                "id": "sjanrz235xp0ai5xrwd8",
+                "name": "spel@buildtime:context.getVariableContext().get('component.displayName') + ' Opens'",
+                "description": "spel@buildtime:'Number of opens of ' + context.getVariableContext().get('component.displayName') + 's'",
+                "expression": "spel@buildtime:'event_count(' + context.getVariableContext().get('component.name') + '_opened)'",
+                "unit": "#",
+                "tags": [
+                    "event-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807186200553454"
+                ]
+            },
+            {
+                "id": "sjanrz3k5forq07ec6yz",
+                "name": "spel@buildtime:'Unique ' + context.getVariableContext().get('component.displayName') + ' Opens'",
+                "description": "spel@buildtime:'Unique people opening a ' + context.getVariableContext().get('component.name')",
+                "expression": "spel@buildtime:'people_count(' + context.getVariableContext().get('component.name') + '_opened)'",
+                "unit": "#",
+                "tags": [
+                    "people-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807186200553454"
+                ]
+            },
+            {
+                "id": "sjanrz40sgq7lsschex7",
+                "name": "spel@buildtime:context.getVariableContext().get('component.displayName') + ' Open Rate'",
+                "description": "spel@buildtime:'(' + context.getVariableContext().get('component.displayName') + ' opens/' + context.getVariableContext().get('component.displayName') + ' deliveries) * 100. ' + context.getVariableContext().get('component.displayName') + ' Open Rate is the ratio of opens of ' + context.getVariableContext().get('component.displayName') + 's to deliveries of ' + context.getVariableContext().get('component.displayName') + 's.'",
+                "expression": "spel@buildtime:'percentage(event_count(' + context.getVariableContext().get('component.name') + '_opened), event_count(' + context.getVariableContext().get('component.name') + '_delivered))'",
+                "unit": "%",
+                "tags": [
+                    "event-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807186200553454"
+                ]
+            },
+            {
+                "id": "sjanrzdu43wynaqm2hc",
+                "name": "spel@buildtime:'Unique ' + context.getVariableContext().get('component.displayName') + ' Open Rate'",
+                "description": "spel@buildtime:'(Unique ' + context.getVariableContext().get('component.displayName') + ' opens/Unique ' + context.getVariableContext().get('component.displayName') + ' deliveries) * 100. Unique ' + context.getVariableContext().get('component.displayName') + ' Open Rate is the ratio of unique people opening a ' + context.getVariableContext().get('component.displayName') + ' to unique people to whom a ' + context.getVariableContext().get('component.displayName') + ' was delivered.'",
+                "expression": "spel@buildtime:'percentage(people_count(' + context.getVariableContext().get('component.name') + '_opened), people_count(' + context.getVariableContext().get('component.name') + '_delivered))'",
+                "unit": "%",
+                "tags": [
+                    "people-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807186200553454"
+                ]
+            }
+        ],
+        "apps": [],
+        "tags": [],
+        "name": "spel@buildtime:context.getVariableContext().get('component.displayName') + ' Opened'",
+        "icon_color": "spel@buildtime:context.getVariableContext().get('journeyNames').contains('ADVOCATE') ? 'primary' : 'secondary'",
+        "description": null,
+        "words": {
+            "singular_noun_name": "handlebars@buildtime:{{name}} Event",
+            "plural_noun_name": "handlebars@buildtime:{{name}} Events",
+            "verb_name": "handlebars@buildtime:{{name}}",
+            "rate_name": "handlebars@buildtime:{{name}} Event Rate",
+            "person_counting_name": "handlebars@buildtime:Unique {{name}} Events"
+        },
+        "component_ids": [
+            "7410807186200553454"
+        ]
+    },
+    {
+        "flow_step_id": "7410807462286686082",
+        "flow_path": "spel@buildtime:'/emails/' + context.getVariableContext().get('component.name')",
+        "sequence": 2,
+        "step_name": "spel@buildtime:context.getVariableContext().get('component.name') + '_triggered'",
+        "icon_type": "envelope",
+        "metrics": [
+            {
+                "id": "sjantroju9es4ulw6uq",
+                "name": "spel@buildtime:context.getVariableContext().get('component.displayName') + ' Triggers'",
+                "description": "spel@buildtime:'Number of times the ' + context.getVariableContext().get('component.displayName') + ' was triggered'",
+                "expression": "spel@buildtime:'event_count(' + context.getVariableContext().get('component.name') + '_triggered)'",
+                "unit": "#",
+                "tags": [
+                    "event-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807461298107847"
+                ]
+            },
+            {
+                "id": "sjantr63ie9rilzboc47",
+                "name": "spel@buildtime:'Unique ' + context.getVariableContext().get('component.displayName') + ' Triggers'",
+                "description": "spel@buildtime:'Unique people to whom a ' + context.getVariableContext().get('component.displayName') + ' was triggered'",
+                "expression": "spel@buildtime:'people_count(' + context.getVariableContext().get('component.name') + '_triggered)'",
+                "unit": "#",
+                "tags": [
+                    "people-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807461298107847"
+                ]
+            }
+        ],
+        "apps": [],
+        "tags": [],
+        "name": "spel@buildtime:context.getVariableContext().get('component.displayName') + ' Triggered'",
+        "icon_color": "spel@buildtime:context.getVariableContext().get('journeyNames').contains('ADVOCATE') ? 'primary' : 'secondary'",
+        "description": null,
+        "words": {
+            "singular_noun_name": "handlebars@buildtime:{{name}} Event",
+            "plural_noun_name": "handlebars@buildtime:{{name}} Events",
+            "verb_name": "handlebars@buildtime:{{name}}",
+            "rate_name": "handlebars@buildtime:{{name}} Event Rate",
+            "person_counting_name": "handlebars@buildtime:Unique {{name}} Events"
+        },
+        "component_ids": [
+            "7410807461298107847"
+        ]
+    },
+    {
+        "flow_step_id": "7410807462545312292",
+        "flow_path": "spel@buildtime:'/emails/' + context.getVariableContext().get('component.name')",
+        "sequence": 3,
+        "step_name": "spel@buildtime:context.getVariableContext().get('component.name') + '_delivered'",
+        "icon_type": "envelope",
+        "metrics": [
+            {
+                "id": "sjantr4xzzzk78nplblf",
+                "name": "spel@buildtime:context.getVariableContext().get('component.displayName') + ' Deliveries'",
+                "description": "spel@buildtime:'Number of times the ' + context.getVariableContext().get('component.displayName') + ' was delivered'",
+                "expression": "spel@buildtime:'event_count(' + context.getVariableContext().get('component.name') + '_delivered)'",
+                "unit": "#",
+                "tags": [
+                    "event-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807461298107847"
+                ]
+            },
+            {
+                "id": "sjantr39zbzbnypa2n34",
+                "name": "spel@buildtime:'Unique ' + context.getVariableContext().get('component.displayName') + ' Deliveries'",
+                "description": "spel@buildtime:'Unique people to whom a ' + context.getVariableContext().get('component.displayName') + ' was delivered'",
+                "expression": "spel@buildtime:'people_count(' + context.getVariableContext().get('component.name') + '_delivered)'",
+                "unit": "#",
+                "tags": [
+                    "people-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807461298107847"
+                ]
+            },
+            {
+                "id": "sjantr21af418w1xt2nf",
+                "name": "spel@buildtime:context.getVariableContext().get('component.displayName') + ' Delivery Rate'",
+                "description": "spel@buildtime:'(' + context.getVariableContext().get('component.displayName') + ' Delivered /' + context.getVariableContext().get('component.displayName') + ' Triggered) * 100. ' + context.getVariableContext().get('component.displayName') + ' Delivery Rate is the ratio of deliveries of ' + context.getVariableContext().get('component.displayName') + 's to triggers of ' + context.getVariableContext().get('component.displayName') + 's.'",
+                "expression": "spel@buildtime:'percentage(event_count(' + context.getVariableContext().get('component.name') + '_delivered), event_count(' + context.getVariableContext().get('component.name') + '_triggered))'",
+                "unit": "%",
+                "tags": [
+                    "event-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807461298107847"
+                ]
+            },
+            {
+                "id": "sjantr4ym0fhnvhw10vy",
+                "name": "spel@buildtime:'Unique ' + context.getVariableContext().get('component.displayName') + ' Delivery Rate'",
+                "description": "spel@buildtime:'(Unique ' + context.getVariableContext().get('component.displayName') + ' deliveries/Unique ' + context.getVariableContext().get('component.displayName') + ' triggers) * 100. Unique ' + context.getVariableContext().get('component.displayName') + ' Delivery Rate is the ratio of unique people to whom a ' + context.getVariableContext().get('component.displayName') + ' was delivered to unique people to whom a ' + context.getVariableContext().get('component.displayName') + ' was triggered.'",
+                "expression": "spel@buildtime:'percentage(people_count(' + context.getVariableContext().get('component.name') + '_delivered), people_count(' + context.getVariableContext().get('component.name') + '_triggered))'",
+                "unit": "%",
+                "tags": [
+                    "people-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807461298107847"
+                ]
+            }
+        ],
+        "apps": [],
+        "tags": [],
+        "name": "spel@buildtime:context.getVariableContext().get('component.displayName') + ' Delivered'",
+        "icon_color": "spel@buildtime:context.getVariableContext().get('journeyNames').contains('ADVOCATE') ? 'primary' : 'secondary'",
+        "description": null,
+        "words": {
+            "singular_noun_name": "handlebars@buildtime:{{name}} Event",
+            "plural_noun_name": "handlebars@buildtime:{{name}} Events",
+            "verb_name": "handlebars@buildtime:{{name}}",
+            "rate_name": "handlebars@buildtime:{{name}} Event Rate",
+            "person_counting_name": "handlebars@buildtime:Unique {{name}} Events"
+        },
+        "component_ids": [
+            "7410807461298107847"
+        ]
+    },
+    {
+        "flow_step_id": "7410807462550268766",
+        "flow_path": "spel@buildtime:'/emails/' + context.getVariableContext().get('component.name')",
+        "sequence": 4,
+        "step_name": "spel@buildtime:context.getVariableContext().get('component.name') + '_opened'",
+        "icon_type": "envelope-open",
+        "metrics": [
+            {
+                "id": "sjantr35xq433l8t59u0",
+                "name": "spel@buildtime:context.getVariableContext().get('component.displayName') + ' Opens'",
+                "description": "spel@buildtime:'Number of opens of ' + context.getVariableContext().get('component.displayName') + 's'",
+                "expression": "spel@buildtime:'event_count(' + context.getVariableContext().get('component.name') + '_opened)'",
+                "unit": "#",
+                "tags": [
+                    "event-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807461298107847"
+                ]
+            },
+            {
+                "id": "sjantrb9lu37muxd2m8",
+                "name": "spel@buildtime:'Unique ' + context.getVariableContext().get('component.displayName') + ' Opens'",
+                "description": "spel@buildtime:'Unique people opening a ' + context.getVariableContext().get('component.name')",
+                "expression": "spel@buildtime:'people_count(' + context.getVariableContext().get('component.name') + '_opened)'",
+                "unit": "#",
+                "tags": [
+                    "people-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807461298107847"
+                ]
+            },
+            {
+                "id": "sjantr1cr3ewe69qidqe",
+                "name": "spel@buildtime:context.getVariableContext().get('component.displayName') + ' Open Rate'",
+                "description": "spel@buildtime:'(' + context.getVariableContext().get('component.displayName') + ' opens/' + context.getVariableContext().get('component.displayName') + ' deliveries) * 100. ' + context.getVariableContext().get('component.displayName') + ' Open Rate is the ratio of opens of ' + context.getVariableContext().get('component.displayName') + 's to deliveries of ' + context.getVariableContext().get('component.displayName') + 's.'",
+                "expression": "spel@buildtime:'percentage(event_count(' + context.getVariableContext().get('component.name') + '_opened), event_count(' + context.getVariableContext().get('component.name') + '_delivered))'",
+                "unit": "%",
+                "tags": [
+                    "event-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807461298107847"
+                ]
+            },
+            {
+                "id": "sjantr3n46oajly8fdgz",
+                "name": "spel@buildtime:'Unique ' + context.getVariableContext().get('component.displayName') + ' Open Rate'",
+                "description": "spel@buildtime:'(Unique ' + context.getVariableContext().get('component.displayName') + ' opens/Unique ' + context.getVariableContext().get('component.displayName') + ' deliveries) * 100. Unique ' + context.getVariableContext().get('component.displayName') + ' Open Rate is the ratio of unique people opening a ' + context.getVariableContext().get('component.displayName') + ' to unique people to whom a ' + context.getVariableContext().get('component.displayName') + ' was delivered.'",
+                "expression": "spel@buildtime:'percentage(people_count(' + context.getVariableContext().get('component.name') + '_opened), people_count(' + context.getVariableContext().get('component.name') + '_delivered))'",
+                "unit": "%",
+                "tags": [
+                    "people-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807461298107847"
+                ]
+            }
+        ],
+        "apps": [],
+        "tags": [],
+        "name": "spel@buildtime:context.getVariableContext().get('component.displayName') + ' Opened'",
+        "icon_color": "spel@buildtime:context.getVariableContext().get('journeyNames').contains('ADVOCATE') ? 'primary' : 'secondary'",
+        "description": null,
+        "words": {
+            "singular_noun_name": "handlebars@buildtime:{{name}} Event",
+            "plural_noun_name": "handlebars@buildtime:{{name}} Events",
+            "verb_name": "handlebars@buildtime:{{name}}",
+            "rate_name": "handlebars@buildtime:{{name}} Event Rate",
+            "person_counting_name": "handlebars@buildtime:Unique {{name}} Events"
+        },
+        "component_ids": [
+            "7410807461298107847"
+        ]
+    },
+    {
+        "flow_step_id": "7410807485997757800",
+        "flow_path": "spel@buildtime:'/emails/' + context.getVariableContext().get('component.name')",
+        "sequence": 2,
+        "step_name": "spel@buildtime:context.getVariableContext().get('component.name') + '_triggered'",
+        "icon_type": "envelope",
+        "metrics": [
+            {
+                "id": "sjantw44v6f6x6fsd9r7",
+                "name": "spel@buildtime:context.getVariableContext().get('component.displayName') + ' Triggers'",
+                "description": "spel@buildtime:'Number of times the ' + context.getVariableContext().get('component.displayName') + ' was triggered'",
+                "expression": "spel@buildtime:'event_count(' + context.getVariableContext().get('component.name') + '_triggered)'",
+                "unit": "#",
+                "tags": [
+                    "event-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807485536219051"
+                ]
+            },
+            {
+                "id": "sjantw2l6l1jeabsekp2",
+                "name": "spel@buildtime:'Unique ' + context.getVariableContext().get('component.displayName') + ' Triggers'",
+                "description": "spel@buildtime:'Unique people to whom a ' + context.getVariableContext().get('component.displayName') + ' was triggered'",
+                "expression": "spel@buildtime:'people_count(' + context.getVariableContext().get('component.name') + '_triggered)'",
+                "unit": "#",
+                "tags": [
+                    "people-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807485536219051"
+                ]
+            }
+        ],
+        "apps": [],
+        "tags": [],
+        "name": "spel@buildtime:context.getVariableContext().get('component.displayName') + ' Triggered'",
+        "icon_color": "spel@buildtime:context.getVariableContext().get('journeyNames').contains('ADVOCATE') ? 'primary' : 'secondary'",
+        "description": null,
+        "words": {
+            "singular_noun_name": "handlebars@buildtime:{{name}} Event",
+            "plural_noun_name": "handlebars@buildtime:{{name}} Events",
+            "verb_name": "handlebars@buildtime:{{name}}",
+            "rate_name": "handlebars@buildtime:{{name}} Event Rate",
+            "person_counting_name": "handlebars@buildtime:Unique {{name}} Events"
+        },
+        "component_ids": [
+            "7410807485536219051"
+        ]
+    },
+    {
+        "flow_step_id": "7410807484862679742",
+        "flow_path": "spel@buildtime:'/emails/' + context.getVariableContext().get('component.name')",
+        "sequence": 3,
+        "step_name": "spel@buildtime:context.getVariableContext().get('component.name') + '_delivered'",
+        "icon_type": "envelope",
+        "metrics": [
+            {
+                "id": "sjantw3d05bbku1ys9vn",
+                "name": "spel@buildtime:context.getVariableContext().get('component.displayName') + ' Deliveries'",
+                "description": "spel@buildtime:'Number of times the ' + context.getVariableContext().get('component.displayName') + ' was delivered'",
+                "expression": "spel@buildtime:'event_count(' + context.getVariableContext().get('component.name') + '_delivered)'",
+                "unit": "#",
+                "tags": [
+                    "event-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807485536219051"
+                ]
+            },
+            {
+                "id": "sjantwgjpx3xm7cjs89",
+                "name": "spel@buildtime:'Unique ' + context.getVariableContext().get('component.displayName') + ' Deliveries'",
+                "description": "spel@buildtime:'Unique people to whom a ' + context.getVariableContext().get('component.displayName') + ' was delivered'",
+                "expression": "spel@buildtime:'people_count(' + context.getVariableContext().get('component.name') + '_delivered)'",
+                "unit": "#",
+                "tags": [
+                    "people-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807485536219051"
+                ]
+            },
+            {
+                "id": "sjantw3dlm9g05imoj1",
+                "name": "spel@buildtime:context.getVariableContext().get('component.displayName') + ' Delivery Rate'",
+                "description": "spel@buildtime:'(' + context.getVariableContext().get('component.displayName') + ' Delivered /' + context.getVariableContext().get('component.displayName') + ' Triggered) * 100. ' + context.getVariableContext().get('component.displayName') + ' Delivery Rate is the ratio of deliveries of ' + context.getVariableContext().get('component.displayName') + 's to triggers of ' + context.getVariableContext().get('component.displayName') + 's.'",
+                "expression": "spel@buildtime:'percentage(event_count(' + context.getVariableContext().get('component.name') + '_delivered), event_count(' + context.getVariableContext().get('component.name') + '_triggered))'",
+                "unit": "%",
+                "tags": [
+                    "event-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807485536219051"
+                ]
+            },
+            {
+                "id": "sjantw43hpt1g7gdmz5x",
+                "name": "spel@buildtime:'Unique ' + context.getVariableContext().get('component.displayName') + ' Delivery Rate'",
+                "description": "spel@buildtime:'(Unique ' + context.getVariableContext().get('component.displayName') + ' deliveries/Unique ' + context.getVariableContext().get('component.displayName') + ' triggers) * 100. Unique ' + context.getVariableContext().get('component.displayName') + ' Delivery Rate is the ratio of unique people to whom a ' + context.getVariableContext().get('component.displayName') + ' was delivered to unique people to whom a ' + context.getVariableContext().get('component.displayName') + ' was triggered.'",
+                "expression": "spel@buildtime:'percentage(people_count(' + context.getVariableContext().get('component.name') + '_delivered), people_count(' + context.getVariableContext().get('component.name') + '_triggered))'",
+                "unit": "%",
+                "tags": [
+                    "people-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807485536219051"
+                ]
+            }
+        ],
+        "apps": [],
+        "tags": [],
+        "name": "spel@buildtime:context.getVariableContext().get('component.displayName') + ' Delivered'",
+        "icon_color": "spel@buildtime:context.getVariableContext().get('journeyNames').contains('ADVOCATE') ? 'primary' : 'secondary'",
+        "description": null,
+        "words": {
+            "singular_noun_name": "handlebars@buildtime:{{name}} Event",
+            "plural_noun_name": "handlebars@buildtime:{{name}} Events",
+            "verb_name": "handlebars@buildtime:{{name}}",
+            "rate_name": "handlebars@buildtime:{{name}} Event Rate",
+            "person_counting_name": "handlebars@buildtime:Unique {{name}} Events"
+        },
+        "component_ids": [
+            "7410807485536219051"
+        ]
+    },
+    {
+        "flow_step_id": "7410807485767842200",
+        "flow_path": "spel@buildtime:'/emails/' + context.getVariableContext().get('component.name')",
+        "sequence": 4,
+        "step_name": "spel@buildtime:context.getVariableContext().get('component.name') + '_opened'",
+        "icon_type": "envelope-open",
+        "metrics": [
+            {
+                "id": "sjantwbmsl7kp445nzd",
+                "name": "spel@buildtime:context.getVariableContext().get('component.displayName') + ' Opens'",
+                "description": "spel@buildtime:'Number of opens of ' + context.getVariableContext().get('component.displayName') + 's'",
+                "expression": "spel@buildtime:'event_count(' + context.getVariableContext().get('component.name') + '_opened)'",
+                "unit": "#",
+                "tags": [
+                    "event-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807485536219051"
+                ]
+            },
+            {
+                "id": "sjantw3te9sjvd2eah3e",
+                "name": "spel@buildtime:'Unique ' + context.getVariableContext().get('component.displayName') + ' Opens'",
+                "description": "spel@buildtime:'Unique people opening a ' + context.getVariableContext().get('component.name')",
+                "expression": "spel@buildtime:'people_count(' + context.getVariableContext().get('component.name') + '_opened)'",
+                "unit": "#",
+                "tags": [
+                    "people-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807485536219051"
+                ]
+            },
+            {
+                "id": "sjantw3uq9i5s2txt7py",
+                "name": "spel@buildtime:context.getVariableContext().get('component.displayName') + ' Open Rate'",
+                "description": "spel@buildtime:'(' + context.getVariableContext().get('component.displayName') + ' opens/' + context.getVariableContext().get('component.displayName') + ' deliveries) * 100. ' + context.getVariableContext().get('component.displayName') + ' Open Rate is the ratio of opens of ' + context.getVariableContext().get('component.displayName') + 's to deliveries of ' + context.getVariableContext().get('component.displayName') + 's.'",
+                "expression": "spel@buildtime:'percentage(event_count(' + context.getVariableContext().get('component.name') + '_opened), event_count(' + context.getVariableContext().get('component.name') + '_delivered))'",
+                "unit": "%",
+                "tags": [
+                    "event-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807485536219051"
+                ]
+            },
+            {
+                "id": "sjantw4a4v98v9xk4h2q",
+                "name": "spel@buildtime:'Unique ' + context.getVariableContext().get('component.displayName') + ' Open Rate'",
+                "description": "spel@buildtime:'(Unique ' + context.getVariableContext().get('component.displayName') + ' opens/Unique ' + context.getVariableContext().get('component.displayName') + ' deliveries) * 100. Unique ' + context.getVariableContext().get('component.displayName') + ' Open Rate is the ratio of unique people opening a ' + context.getVariableContext().get('component.displayName') + ' to unique people to whom a ' + context.getVariableContext().get('component.displayName') + ' was delivered.'",
+                "expression": "spel@buildtime:'percentage(people_count(' + context.getVariableContext().get('component.name') + '_opened), people_count(' + context.getVariableContext().get('component.name') + '_delivered))'",
+                "unit": "%",
+                "tags": [
+                    "people-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807485536219051"
+                ]
+            }
+        ],
+        "apps": [],
+        "tags": [],
+        "name": "spel@buildtime:context.getVariableContext().get('component.displayName') + ' Opened'",
+        "icon_color": "spel@buildtime:context.getVariableContext().get('journeyNames').contains('ADVOCATE') ? 'primary' : 'secondary'",
+        "description": null,
+        "words": {
+            "singular_noun_name": "handlebars@buildtime:{{name}} Event",
+            "plural_noun_name": "handlebars@buildtime:{{name}} Events",
+            "verb_name": "handlebars@buildtime:{{name}}",
+            "rate_name": "handlebars@buildtime:{{name}} Event Rate",
+            "person_counting_name": "handlebars@buildtime:Unique {{name}} Events"
+        },
+        "component_ids": [
+            "7410807485536219051"
+        ]
+    },
+    {
+        "flow_step_id": "7410807503392327497",
+        "flow_path": "spel@buildtime:'/emails/' + context.getVariableContext().get('component.name')",
+        "sequence": 2,
+        "step_name": "spel@buildtime:context.getVariableContext().get('component.name') + '_triggered'",
+        "icon_type": "envelope",
+        "metrics": [
+            {
+                "id": "sjanu160686kjg9v51vu",
+                "name": "spel@buildtime:context.getVariableContext().get('component.displayName') + ' Triggers'",
+                "description": "spel@buildtime:'Number of times the ' + context.getVariableContext().get('component.displayName') + ' was triggered'",
+                "expression": "spel@buildtime:'event_count(' + context.getVariableContext().get('component.name') + '_triggered)'",
+                "unit": "#",
+                "tags": [
+                    "event-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807506176006634"
+                ]
+            },
+            {
+                "id": "sjanu15leqigngcncaes",
+                "name": "spel@buildtime:'Unique ' + context.getVariableContext().get('component.displayName') + ' Triggers'",
+                "description": "spel@buildtime:'Unique people to whom a ' + context.getVariableContext().get('component.displayName') + ' was triggered'",
+                "expression": "spel@buildtime:'people_count(' + context.getVariableContext().get('component.name') + '_triggered)'",
+                "unit": "#",
+                "tags": [
+                    "people-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807506176006634"
+                ]
+            }
+        ],
+        "apps": [],
+        "tags": [],
+        "name": "spel@buildtime:context.getVariableContext().get('component.displayName') + ' Triggered'",
+        "icon_color": "spel@buildtime:context.getVariableContext().get('journeyNames').contains('ADVOCATE') ? 'primary' : 'secondary'",
+        "description": null,
+        "words": {
+            "singular_noun_name": "handlebars@buildtime:{{name}} Event",
+            "plural_noun_name": "handlebars@buildtime:{{name}} Events",
+            "verb_name": "handlebars@buildtime:{{name}}",
+            "rate_name": "handlebars@buildtime:{{name}} Event Rate",
+            "person_counting_name": "handlebars@buildtime:Unique {{name}} Events"
+        },
+        "component_ids": [
+            "7410807506176006634"
+        ]
+    },
+    {
+        "flow_step_id": "7410807506912665621",
+        "flow_path": "spel@buildtime:'/emails/' + context.getVariableContext().get('component.name')",
+        "sequence": 3,
+        "step_name": "spel@buildtime:context.getVariableContext().get('component.name') + '_delivered'",
+        "icon_type": "envelope",
+        "metrics": [
+            {
+                "id": "sjanu15btkbgvqnehsbv",
+                "name": "spel@buildtime:context.getVariableContext().get('component.displayName') + ' Deliveries'",
+                "description": "spel@buildtime:'Number of times the ' + context.getVariableContext().get('component.displayName') + ' was delivered'",
+                "expression": "spel@buildtime:'event_count(' + context.getVariableContext().get('component.name') + '_delivered)'",
+                "unit": "#",
+                "tags": [
+                    "event-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807506176006634"
+                ]
+            },
+            {
+                "id": "sjanu14qb7d03fqad176",
+                "name": "spel@buildtime:'Unique ' + context.getVariableContext().get('component.displayName') + ' Deliveries'",
+                "description": "spel@buildtime:'Unique people to whom a ' + context.getVariableContext().get('component.displayName') + ' was delivered'",
+                "expression": "spel@buildtime:'people_count(' + context.getVariableContext().get('component.name') + '_delivered)'",
+                "unit": "#",
+                "tags": [
+                    "people-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807506176006634"
+                ]
+            },
+            {
+                "id": "sjanu12phu02z6uioniv",
+                "name": "spel@buildtime:context.getVariableContext().get('component.displayName') + ' Delivery Rate'",
+                "description": "spel@buildtime:'(' + context.getVariableContext().get('component.displayName') + ' Delivered /' + context.getVariableContext().get('component.displayName') + ' Triggered) * 100. ' + context.getVariableContext().get('component.displayName') + ' Delivery Rate is the ratio of deliveries of ' + context.getVariableContext().get('component.displayName') + 's to triggers of ' + context.getVariableContext().get('component.displayName') + 's.'",
+                "expression": "spel@buildtime:'percentage(event_count(' + context.getVariableContext().get('component.name') + '_delivered), event_count(' + context.getVariableContext().get('component.name') + '_triggered))'",
+                "unit": "%",
+                "tags": [
+                    "event-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807506176006634"
+                ]
+            },
+            {
+                "id": "sjanu13jf2sdtdyy3iv7",
+                "name": "spel@buildtime:'Unique ' + context.getVariableContext().get('component.displayName') + ' Delivery Rate'",
+                "description": "spel@buildtime:'(Unique ' + context.getVariableContext().get('component.displayName') + ' deliveries/Unique ' + context.getVariableContext().get('component.displayName') + ' triggers) * 100. Unique ' + context.getVariableContext().get('component.displayName') + ' Delivery Rate is the ratio of unique people to whom a ' + context.getVariableContext().get('component.displayName') + ' was delivered to unique people to whom a ' + context.getVariableContext().get('component.displayName') + ' was triggered.'",
+                "expression": "spel@buildtime:'percentage(people_count(' + context.getVariableContext().get('component.name') + '_delivered), people_count(' + context.getVariableContext().get('component.name') + '_triggered))'",
+                "unit": "%",
+                "tags": [
+                    "people-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807506176006634"
+                ]
+            }
+        ],
+        "apps": [],
+        "tags": [],
+        "name": "spel@buildtime:context.getVariableContext().get('component.displayName') + ' Delivered'",
+        "icon_color": "spel@buildtime:context.getVariableContext().get('journeyNames').contains('ADVOCATE') ? 'primary' : 'secondary'",
+        "description": null,
+        "words": {
+            "singular_noun_name": "handlebars@buildtime:{{name}} Event",
+            "plural_noun_name": "handlebars@buildtime:{{name}} Events",
+            "verb_name": "handlebars@buildtime:{{name}}",
+            "rate_name": "handlebars@buildtime:{{name}} Event Rate",
+            "person_counting_name": "handlebars@buildtime:Unique {{name}} Events"
+        },
+        "component_ids": [
+            "7410807506176006634"
+        ]
+    },
+    {
+        "flow_step_id": "7410807503367006905",
+        "flow_path": "spel@buildtime:'/emails/' + context.getVariableContext().get('component.name')",
+        "sequence": 4,
+        "step_name": "spel@buildtime:context.getVariableContext().get('component.name') + '_opened'",
+        "icon_type": "envelope-open",
+        "metrics": [
+            {
+                "id": "sjanu12jn1hpnl11gr48",
+                "name": "spel@buildtime:context.getVariableContext().get('component.displayName') + ' Opens'",
+                "description": "spel@buildtime:'Number of opens of ' + context.getVariableContext().get('component.displayName') + 's'",
+                "expression": "spel@buildtime:'event_count(' + context.getVariableContext().get('component.name') + '_opened)'",
+                "unit": "#",
+                "tags": [
+                    "event-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807506176006634"
+                ]
+            },
+            {
+                "id": "sjanu13z3go84gkgbb1s",
+                "name": "spel@buildtime:'Unique ' + context.getVariableContext().get('component.displayName') + ' Opens'",
+                "description": "spel@buildtime:'Unique people opening a ' + context.getVariableContext().get('component.name')",
+                "expression": "spel@buildtime:'people_count(' + context.getVariableContext().get('component.name') + '_opened)'",
+                "unit": "#",
+                "tags": [
+                    "people-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807506176006634"
+                ]
+            },
+            {
+                "id": "sjanu113poiasaws2u58",
+                "name": "spel@buildtime:context.getVariableContext().get('component.displayName') + ' Open Rate'",
+                "description": "spel@buildtime:'(' + context.getVariableContext().get('component.displayName') + ' opens/' + context.getVariableContext().get('component.displayName') + ' deliveries) * 100. ' + context.getVariableContext().get('component.displayName') + ' Open Rate is the ratio of opens of ' + context.getVariableContext().get('component.displayName') + 's to deliveries of ' + context.getVariableContext().get('component.displayName') + 's.'",
+                "expression": "spel@buildtime:'percentage(event_count(' + context.getVariableContext().get('component.name') + '_opened), event_count(' + context.getVariableContext().get('component.name') + '_delivered))'",
+                "unit": "%",
+                "tags": [
+                    "event-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807506176006634"
+                ]
+            },
+            {
+                "id": "sjanu14pdg13lzasnchr",
+                "name": "spel@buildtime:'Unique ' + context.getVariableContext().get('component.displayName') + ' Open Rate'",
+                "description": "spel@buildtime:'(Unique ' + context.getVariableContext().get('component.displayName') + ' opens/Unique ' + context.getVariableContext().get('component.displayName') + ' deliveries) * 100. Unique ' + context.getVariableContext().get('component.displayName') + ' Open Rate is the ratio of unique people opening a ' + context.getVariableContext().get('component.displayName') + ' to unique people to whom a ' + context.getVariableContext().get('component.displayName') + ' was delivered.'",
+                "expression": "spel@buildtime:'percentage(people_count(' + context.getVariableContext().get('component.name') + '_opened), people_count(' + context.getVariableContext().get('component.name') + '_delivered))'",
+                "unit": "%",
+                "tags": [
+                    "people-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807506176006634"
+                ]
+            }
+        ],
+        "apps": [],
+        "tags": [],
+        "name": "spel@buildtime:context.getVariableContext().get('component.displayName') + ' Opened'",
+        "icon_color": "spel@buildtime:context.getVariableContext().get('journeyNames').contains('ADVOCATE') ? 'primary' : 'secondary'",
+        "description": null,
+        "words": {
+            "singular_noun_name": "handlebars@buildtime:{{name}} Event",
+            "plural_noun_name": "handlebars@buildtime:{{name}} Events",
+            "verb_name": "handlebars@buildtime:{{name}}",
+            "rate_name": "handlebars@buildtime:{{name}} Event Rate",
+            "person_counting_name": "handlebars@buildtime:Unique {{name}} Events"
+        },
+        "component_ids": [
+            "7410807506176006634"
+        ]
+    },
+    {
+        "flow_step_id": "7410807528169146879",
+        "flow_path": "spel@buildtime:'/emails/' + context.getVariableContext().get('component.name')",
+        "sequence": 2,
+        "step_name": "spel@buildtime:context.getVariableContext().get('component.name') + '_triggered'",
+        "icon_type": "envelope",
+        "metrics": [
+            {
+                "id": "sjanu62lopx75k57po9t",
+                "name": "spel@buildtime:context.getVariableContext().get('component.displayName') + ' Triggers'",
+                "description": "spel@buildtime:'Number of times the ' + context.getVariableContext().get('component.displayName') + ' was triggered'",
+                "expression": "spel@buildtime:'event_count(' + context.getVariableContext().get('component.name') + '_triggered)'",
+                "unit": "#",
+                "tags": [
+                    "event-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807525130848455"
+                ]
+            },
+            {
+                "id": "sjanu6173cec0yrbt2i3",
+                "name": "spel@buildtime:'Unique ' + context.getVariableContext().get('component.displayName') + ' Triggers'",
+                "description": "spel@buildtime:'Unique people to whom a ' + context.getVariableContext().get('component.displayName') + ' was triggered'",
+                "expression": "spel@buildtime:'people_count(' + context.getVariableContext().get('component.name') + '_triggered)'",
+                "unit": "#",
+                "tags": [
+                    "people-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807525130848455"
+                ]
+            }
+        ],
+        "apps": [],
+        "tags": [],
+        "name": "spel@buildtime:context.getVariableContext().get('component.displayName') + ' Triggered'",
+        "icon_color": "spel@buildtime:context.getVariableContext().get('journeyNames').contains('ADVOCATE') ? 'primary' : 'secondary'",
+        "description": null,
+        "words": {
+            "singular_noun_name": "handlebars@buildtime:{{name}} Event",
+            "plural_noun_name": "handlebars@buildtime:{{name}} Events",
+            "verb_name": "handlebars@buildtime:{{name}}",
+            "rate_name": "handlebars@buildtime:{{name}} Event Rate",
+            "person_counting_name": "handlebars@buildtime:Unique {{name}} Events"
+        },
+        "component_ids": [
+            "7410807525130848455"
+        ]
+    },
+    {
+        "flow_step_id": "7410807525955200576",
+        "flow_path": "spel@buildtime:'/emails/' + context.getVariableContext().get('component.name')",
+        "sequence": 3,
+        "step_name": "spel@buildtime:context.getVariableContext().get('component.name') + '_delivered'",
+        "icon_type": "envelope",
+        "metrics": [
+            {
+                "id": "sjanu61bwv0br03xs7uc",
+                "name": "spel@buildtime:context.getVariableContext().get('component.displayName') + ' Deliveries'",
+                "description": "spel@buildtime:'Number of times the ' + context.getVariableContext().get('component.displayName') + ' was delivered'",
+                "expression": "spel@buildtime:'event_count(' + context.getVariableContext().get('component.name') + '_delivered)'",
+                "unit": "#",
+                "tags": [
+                    "event-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807525130848455"
+                ]
+            },
+            {
+                "id": "sjanu6t0fa4m07o5fga",
+                "name": "spel@buildtime:'Unique ' + context.getVariableContext().get('component.displayName') + ' Deliveries'",
+                "description": "spel@buildtime:'Unique people to whom a ' + context.getVariableContext().get('component.displayName') + ' was delivered'",
+                "expression": "spel@buildtime:'people_count(' + context.getVariableContext().get('component.name') + '_delivered)'",
+                "unit": "#",
+                "tags": [
+                    "people-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807525130848455"
+                ]
+            },
+            {
+                "id": "sjanu61qe7pcz0u98g5f",
+                "name": "spel@buildtime:context.getVariableContext().get('component.displayName') + ' Delivery Rate'",
+                "description": "spel@buildtime:'(' + context.getVariableContext().get('component.displayName') + ' Delivered /' + context.getVariableContext().get('component.displayName') + ' Triggered) * 100. ' + context.getVariableContext().get('component.displayName') + ' Delivery Rate is the ratio of deliveries of ' + context.getVariableContext().get('component.displayName') + 's to triggers of ' + context.getVariableContext().get('component.displayName') + 's.'",
+                "expression": "spel@buildtime:'percentage(event_count(' + context.getVariableContext().get('component.name') + '_delivered), event_count(' + context.getVariableContext().get('component.name') + '_triggered))'",
+                "unit": "%",
+                "tags": [
+                    "event-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807525130848455"
+                ]
+            },
+            {
+                "id": "sjanu667hq3oafxnojxt",
+                "name": "spel@buildtime:'Unique ' + context.getVariableContext().get('component.displayName') + ' Delivery Rate'",
+                "description": "spel@buildtime:'(Unique ' + context.getVariableContext().get('component.displayName') + ' deliveries/Unique ' + context.getVariableContext().get('component.displayName') + ' triggers) * 100. Unique ' + context.getVariableContext().get('component.displayName') + ' Delivery Rate is the ratio of unique people to whom a ' + context.getVariableContext().get('component.displayName') + ' was delivered to unique people to whom a ' + context.getVariableContext().get('component.displayName') + ' was triggered.'",
+                "expression": "spel@buildtime:'percentage(people_count(' + context.getVariableContext().get('component.name') + '_delivered), people_count(' + context.getVariableContext().get('component.name') + '_triggered))'",
+                "unit": "%",
+                "tags": [
+                    "people-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807525130848455"
+                ]
+            }
+        ],
+        "apps": [],
+        "tags": [],
+        "name": "spel@buildtime:context.getVariableContext().get('component.displayName') + ' Delivered'",
+        "icon_color": "spel@buildtime:context.getVariableContext().get('journeyNames').contains('ADVOCATE') ? 'primary' : 'secondary'",
+        "description": null,
+        "words": {
+            "singular_noun_name": "handlebars@buildtime:{{name}} Event",
+            "plural_noun_name": "handlebars@buildtime:{{name}} Events",
+            "verb_name": "handlebars@buildtime:{{name}}",
+            "rate_name": "handlebars@buildtime:{{name}} Event Rate",
+            "person_counting_name": "handlebars@buildtime:Unique {{name}} Events"
+        },
+        "component_ids": [
+            "7410807525130848455"
+        ]
+    },
+    {
+        "flow_step_id": "7410807528357026382",
+        "flow_path": "spel@buildtime:'/emails/' + context.getVariableContext().get('component.name')",
+        "sequence": 4,
+        "step_name": "spel@buildtime:context.getVariableContext().get('component.name') + '_opened'",
+        "icon_type": "envelope-open",
+        "metrics": [
+            {
+                "id": "sjanu6uffbi4pvni8ol",
+                "name": "spel@buildtime:context.getVariableContext().get('component.displayName') + ' Opens'",
+                "description": "spel@buildtime:'Number of opens of ' + context.getVariableContext().get('component.displayName') + 's'",
+                "expression": "spel@buildtime:'event_count(' + context.getVariableContext().get('component.name') + '_opened)'",
+                "unit": "#",
+                "tags": [
+                    "event-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807525130848455"
+                ]
+            },
+            {
+                "id": "sjanu61g7u107mo31x7c",
+                "name": "spel@buildtime:'Unique ' + context.getVariableContext().get('component.displayName') + ' Opens'",
+                "description": "spel@buildtime:'Unique people opening a ' + context.getVariableContext().get('component.name')",
+                "expression": "spel@buildtime:'people_count(' + context.getVariableContext().get('component.name') + '_opened)'",
+                "unit": "#",
+                "tags": [
+                    "people-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807525130848455"
+                ]
+            },
+            {
+                "id": "sjanu65jczvm6nb8bbfr",
+                "name": "spel@buildtime:context.getVariableContext().get('component.displayName') + ' Open Rate'",
+                "description": "spel@buildtime:'(' + context.getVariableContext().get('component.displayName') + ' opens/' + context.getVariableContext().get('component.displayName') + ' deliveries) * 100. ' + context.getVariableContext().get('component.displayName') + ' Open Rate is the ratio of opens of ' + context.getVariableContext().get('component.displayName') + 's to deliveries of ' + context.getVariableContext().get('component.displayName') + 's.'",
+                "expression": "spel@buildtime:'percentage(event_count(' + context.getVariableContext().get('component.name') + '_opened), event_count(' + context.getVariableContext().get('component.name') + '_delivered))'",
+                "unit": "%",
+                "tags": [
+                    "event-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807525130848455"
+                ]
+            },
+            {
+                "id": "sjanu6izygsfyah3ghz",
+                "name": "spel@buildtime:'Unique ' + context.getVariableContext().get('component.displayName') + ' Open Rate'",
+                "description": "spel@buildtime:'(Unique ' + context.getVariableContext().get('component.displayName') + ' opens/Unique ' + context.getVariableContext().get('component.displayName') + ' deliveries) * 100. Unique ' + context.getVariableContext().get('component.displayName') + ' Open Rate is the ratio of unique people opening a ' + context.getVariableContext().get('component.displayName') + ' to unique people to whom a ' + context.getVariableContext().get('component.displayName') + ' was delivered.'",
+                "expression": "spel@buildtime:'percentage(people_count(' + context.getVariableContext().get('component.name') + '_opened), people_count(' + context.getVariableContext().get('component.name') + '_delivered))'",
+                "unit": "%",
+                "tags": [
+                    "people-funnel-report"
+                ],
+                "component_ids": [
+                    "7410807525130848455"
+                ]
+            }
+        ],
+        "apps": [],
+        "tags": [],
+        "name": "spel@buildtime:context.getVariableContext().get('component.displayName') + ' Opened'",
+        "icon_color": "spel@buildtime:context.getVariableContext().get('journeyNames').contains('ADVOCATE') ? 'primary' : 'secondary'",
+        "description": null,
+        "words": {
+            "singular_noun_name": "handlebars@buildtime:{{name}} Event",
+            "plural_noun_name": "handlebars@buildtime:{{name}} Events",
+            "verb_name": "handlebars@buildtime:{{name}}",
+            "rate_name": "handlebars@buildtime:{{name}} Event Rate",
+            "person_counting_name": "handlebars@buildtime:Unique {{name}} Events"
+        },
+        "component_ids": [
+            "7410807525130848455"
+        ]
+    }
+]
